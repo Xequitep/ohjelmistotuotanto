@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ 
+<head> 
+    <meta charset="UTF-8">
+    <title>Laske bruttopalkka</title>
+ <!-- style-elementin avulla muotoillaan lomakekentät alkamaan samasta kohtaa -->
+<style>
+    label {
+        display: block;
+        width: 5em;
+        float: left;
+    }
+</style>
+</head>
+
+<body>
+    <h3>Laske bruttopalkka</h3>
+
+    <form>
+        <p>
+            <label>Tehdyt tunnit:</label>
+            <input type="text" id="tunnit" size="6"> h
+        </p>
+        <p>
+            <label>Tuntipalkka:</label>
+            <input type="text" id="tuntipalkka" size="3"> €
+        </p>
+        <p>
+		   <!-- Kun painiketta painetaan, kutsutaan funktiota laskeBrutto, joka on alkaen rivillä 39 -->
+            <input type="button" value="Laske" onclick="laskeBrutto()">
+        </p>
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <div id="vastaus"></div>
+
+    <script>
+        function laskeBrutto() {
+            // Lomakekentän tunnit arvo 
+            var tunnit = document.getElementById("tunnit").value;
+
+            // Lomakekentän tuntipalkka arvo
+            var tuntipalkka = document.getElementById("tuntipalkka").value;
+
+            // Lasketaan alennettu tunnit
+            var bruttopalkka = tunnit * tuntipalkka
+
+            // Kirjoitetaan vastaus html-sivulla elementtiin, jonka id:n arvo on palkkio
+            // Vastaus kirjoitetaan kahdella desimaalilla
+            document.getElementById("vastaus").innerHTML = "<p>Bruttopalkka on " +
+                bruttopalkka.toFixed(2) + " euroa" + "</p>";
+        }
+    </script>
+</body>
+
+</html>
