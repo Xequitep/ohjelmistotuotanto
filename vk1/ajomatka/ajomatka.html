@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajominuuttien laskeminen</title>
+<!-- 
+Ohjelma kysyy ajominuuttien lukumäärän ja näyttää sen tunneissa ja minuuteissa. Tämän lisäksi näytetään ajoaika pyöristettynä lähimpään tuntiin.
+ -->
+</head>
+
+<body>
+	<h3>Ajominuutit lasku</h3>
+
+	<form>
+		<label>Ajoaika minuutteina:</label> 
+		<!-- Lomakekenttä, jonka arvo luetaan JavaScriptissä rivillä 29 -->
+		<input type="text" id="minuutit" size="3">
+
+		<!-- Kun painiketta painetaan, suoritetaan laske funktio -->
+		<input type="button" value="Muunna" onclick="laske()">
+	</form>
+
+	<!-- Vastaus kirjoitetaan alla olevaan elementtiin JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+		function laske() {
+			// Lomakekentän minuutit arvo riviltä 17 otetaan JavaScript muuttujaan minuuttiarvo
+			var minuuttiarvo = document.getElementById("minuutit").value;
+
+		
+			var tunnit = minuuttiarvo / 60;
+			var minuutityli = minuuttiarvo % 60
+
+			// Kirjoitetaan vastaus html-sivun elementtiin, jonka id:n arvo on vastaus
+
+			// + liittää yhteen merkkijonoja ja muuttujia. Vakiona näkyvä merkkijono on lainausmerkeissä
+			document.getElementById("vastaus").innerHTML = "<p>Ajotunteja " +
+					Math.floor(tunnit) + " ja minuutteja " + minuutityli + ".</p>" + "<p>" + "Pyöristettynä lähimpään tuntiin: " + Math.round(minuuttiarvo / 60) + ".</p>";
+		}
+	</script>
+</body>
+</html>
