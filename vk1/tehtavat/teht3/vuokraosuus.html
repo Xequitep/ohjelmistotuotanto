@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ 
+<head> 
+    <meta charset="UTF-8">
+    <title>Mökkivuokran jakolaskuri</title>
+<style>
+    label {
+        display: block;
+        width: 8em;
+        float: left;
+    }
+</style>
+</head>
+
+<body>
+    <h3>Mökkiosuuden jakolaskuri</h3>
+
+    <form>
+        <p>
+            <label>Vuokra:</label>
+            <input type="text" id="vuokra" size="6">
+        </p>
+        <p>
+            <label>Osallistujat (kk):</label>
+            <input type="text" id="osallistujat" size="3"> 
+        </p>
+        <p>
+
+            <input type="button" value="Laske vuokra" onclick="laskeVuokra()">
+        </p>
+    </form>
+
+
+    <div id="vastaus"></div>
+
+    <script>
+        function laskeVuokra() {
+
+            var vuokra = document.getElementById("vuokra").value;
+            var osallistujat = document.getElementById("osallistujat").value;
+
+            var kokonaisvuokra = vuokra / osallistujat
+
+            document.getElementById("vastaus").innerHTML = "<p>Vuokra per henkilö on " +
+                kokonaisvuokra.toFixed(2) + " euroa </p>";
+        }
+    </script>
+</body>
+
+</html>

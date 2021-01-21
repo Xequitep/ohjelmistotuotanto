@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ 
+<head> 
+    <meta charset="UTF-8">
+    <title>Laske kanavapaketin hinta</title>
+<style>
+    label {
+        display: block;
+        width: 8em;
+        float: left;
+    }
+</style>
+</head>
+
+<body>
+    <h3>Alennettu hinta</h3>
+
+    <form>
+        <p>
+            <label>Paketin hinta:</label>
+            <input type="text" id="hinta" size="6">
+        </p>
+        <p>
+            <label>Määräaika (kk):</label>
+            <input type="text" id="maaraaika" size="3"> 
+        </p>
+        <p>
+
+            <input type="button" value="Laske kokonaishinta" onclick="laskeHinta()">
+        </p>
+    </form>
+
+
+    <div id="vastaus"></div>
+
+    <script>
+        function laskeHinta() {
+
+            var hinta = document.getElementById("hinta").value;
+            var maaraaika = document.getElementById("maaraaika").value;
+
+            var kokonaishinta = hinta * maaraaika
+
+            document.getElementById("vastaus").innerHTML = "<p>Kokonaishinta on " +
+                kokonaishinta.toFixed(2) + " euroa </p>";
+        }
+    </script>
+</body>
+
+</html>

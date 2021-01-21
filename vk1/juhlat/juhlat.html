@@ -3,37 +3,41 @@
  
 <head> 
     <meta charset="UTF-8">
-    <title>Juhlien kustannukset</title>
+    <title>Pitopalvelu</title>
 <!-- 
 Tee ohjelma, joka laskee tuotteen alennetun hinnan. Ohjelma kysyy tuotteen alentamattoman 
 hinnan sekä alennusprosentin. Ohjelma kertoo tuotteen alennetun hinnan. 
-Alennettu hinta lasketaan: hinta * (100.0 - alennusprosentti) / 100.0. 
+Alennettu hinta lasketaan: hinta * (100.0 - pullonhinta) / 100.0. 
  -->
  <!-- style-elementin avulla muotoillaan lomakekentät alkamaan samasta kohtaa -->
 <style>
     label {
         display: block;
-        width: 5em;
+        width: 11em;
         float: left;
     }
 </style>
 </head>
 
 <body>
-    <h3>Alennettu hinta</h3>
+    <h3>Pitopalvelu</h3>
 
     <form>
         <p>
-            <label>Hinta:</label>
-            <input type="text" id="hinta" size="6">
+            <label>Kutsuttujen määrä:</label>
+            <input type="text" id="kutsutut" size="6">
         </p>
         <p>
-            <label>Alennus:</label>
-            <input type="text" id="alennusprosentti" size="3"> %
+            <label>Yhden pullon hinta:</label>
+            <input type="text" id="pullonhinta" size="3"> 
+        </p>
+        <p>
+            <label>Pitopalvelun per henkilö:</label>
+            <input type="text" id="pitopalveluhinta" size="3"> 
         </p>
         <p>
 		   <!-- Kun painiketta painetaan, kutsutaan funktiota laskeAlennettu, joka on alkaen rivillä 43 -->
-            <input type="button" value="Laske" onclick="laskeAlennettu()">
+            <input type="button" value="Laske" onclick="laskePitopalvelu()">
         </p>
     </form>
 
@@ -41,20 +45,24 @@ Alennettu hinta lasketaan: hinta * (100.0 - alennusprosentti) / 100.0.
     <div id="vastaus"></div>
 
     <script>
-        function laskeAlennettu() {
-            // Lomakekentän hinta arvo 
-            var hinta = document.getElementById("hinta").value;
+        function laskePitopalvelu() {
+            // Lomakekentän kutsutut arvo 
+            var kutsutut = document.getElementById("kutsutut").value;
 
-            // Lomakekentän alennusprosentti arvo
-            var alennusprosentti = document.getElementById("alennusprosentti").value;
+            // Lomakekentän pullonhinta arvo
+            var pullonhinta = document.getElementById("pullonhinta").value;
 
-            // Lasketaan alennettu hinta
-            var alennettu = hinta * (100.0 - alennusprosentti) / 100.0;
+            // Lomakekentän pullonhinta arvo
+             var pitopalveluhinta = document.getElementById("pitopalveluhinta").value;
+
+            // Muuttujat
+            var tarvitutpullot = Math.ceil(kutsutut / 7)
+         
 
             // Kirjoitetaan vastaus html-sivulla elementtiin, jonka id:n arvo on palkkio
             // Vastaus kirjoitetaan kahdella desimaalilla
-            document.getElementById("vastaus").innerHTML = "<p>Alennettu hinta on " +
-                alennettu.toFixed(2) + "</p>";
+            document.getElementById("vastaus").innerHTML = "<p>Pulloja tarvitaan " +
+                tarvitutpullot + "</p> Juomien kustannukset " + tarvitutpullot * pullonhinta + " euroa" + "</p>Pitopalvelun hinta yhteensä " + pitopalveluhinta * kutsutut + " euroa" + "<p>Juhlien kustannukset yhteensä " + (tarvitutpullot * pullonhinta + pitopalveluhinta * kutsutut)  +  " euroa.</p>"
         }
     </script>
 </body>
