@@ -1,0 +1,6 @@
+a) Kun nopan luku on 1,3 tai 5
+b) Kun nopan luku on 1,3 ja 5 samaan aikaan
+c) kun ikä on välillä 18 - 65
+d) Kun ikä on 18 tai 65
+e) Kun ikä on 18 ja tulot ovat yli 7353
+f) Kun ikä on 18 tai tulot ovat yli 7353

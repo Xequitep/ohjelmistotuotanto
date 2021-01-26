@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/alennus.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Alennus</title>
+<!--  
+Eräs kauppaketju antaa ostoksista alennusta seuraavan taulukon mukaan:
+Osto	Alennus
+0-299,99€	2%
+300-599,99€	3%
+yli 599,99€	4%
+Tee ohjelma, joka laskee ostoksesta saadun alennuksen.
+ -->
+</head>
+
+<body class="vsc-initialized">
+	<h3>Alennus</h3>
+
+	<form>
+		<label>Ostot:</label> 
+		<input type="text" id="ostot" size="4"> 
+		<input type="button" value="Laske alennus" onclick="laskeAlennus()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeAlennus() {
+			// Lomakekentän lukema arvo
+			var ostot = document.getElementById("ostot").value;
+
+			// Muuttuja, johon lasketaan alennus
+			var alennus;
+
+			// Jos ostot on 0-299,99
+			if (ostot >= 0 && ostot <= 299.99) {
+				alennus = ostot * 0.02;
+			// muuten jos ostot on 300-599,99
+			} else if (ostot <= 599.99) {
+				alennus = ostot * 0.03;
+			} else {
+				alennus = ostot * 0.04;
+			}
+
+			document.getElementById("vastaus").innerHTML = "<p>Alennus on " +
+					alennus.toFixed(2) + "</p>";
+		}
+	</script>
+
+</body></html>

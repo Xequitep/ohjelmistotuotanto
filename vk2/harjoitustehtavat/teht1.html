@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/alennus.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Pelaaminen</title>
+
+</head>
+
+<body class="vsc-initialized">
+	<h3>Tarkista peli-ikä</h3>
+
+	<form>
+		<label>ika:</label> 
+		<input type="text" id="ika" size="4"> 
+		<input type="button" value="Tarkista" onclick="tarkistaIka()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function tarkistaIka() {
+			// Lomakekentän lukema arvo
+			var ika = document.getElementById("ika").value;
+
+			// Muuttuja, johon lasketaan ikatulos
+			var ikatulos;
+
+			if (ika >= 0 && ika < 18) {
+				ikatulos = "Alaikäinen ei voi pelata"
+			} else {
+				ikatulos = "Peli voi alkaa"
+			}
+
+			document.getElementById("vastaus").innerHTML = "<p>" + ikatulos + "</p>";
+		}
+	</script>
+
+</body></html>
