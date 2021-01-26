@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/alennus.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Rattijuopumus check</title>
+<!--  
+Eräs kauppaketju antaa ostoksista alennusta seuraavan taulukon mukaan:
+Osto	Alennus
+0-299,99€	2%
+300-599,99€	3%
+yli 599,99€	4%
+Tee ohjelma, joka laskee ostoksesta saadun alennuksen.
+ -->
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske rattijuopumus</h3>
+
+	<form>
+		<label>Lukema:</label> 
+		<input type="text" id="juopumus" size="4"> 
+		&#8240 <input type="button" value="Laske juopumus" onclick="laskeJuopumus()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeJuopumus() {
+			// Lomakekentän lukema arvo
+            var juopumus = document.getElementById("juopumus").value;
+            var promillet
+
+			// Jos juopumus on 0-299,99
+			if (juopumus >= 0.5 && juopumus < 1.4) {
+				promillet = juopumus + "&#8240 lukema vastaa rattijuopumusta"
+			// muuten jos juopumus on 300-599,99
+			} else if (juopumus >= 1.4) {
+				promillet = juopumus + "&#8240 lukema vastaa törkeätä rattijuopumusta"
+			} else {
+				promillet = juopumus + "&#8240 ei aiheuta rattijuopumusta"
+			}
+
+			document.getElementById("vastaus").innerHTML = promillet
+		}
+	</script>
+
+</body></html>

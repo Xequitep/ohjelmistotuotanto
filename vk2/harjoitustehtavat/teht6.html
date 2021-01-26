@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/vertailutulos.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Vertaa puhelinliittymiä</title>
+<!--  
+Eräs kauppaketju antaa ostoksista vertailutulosta seuraavan taulukon mukaan:
+Osto	vertailutulos
+0-299,99€	2%
+300-599,99€	3%
+yli 599,99€	4%
+Tee ohjelma, joka laskee ostoksesta saadun alennuksen.
+ -->
+</head>
+
+<body class="vsc-initialized">
+	<h3>Vertaa</h3>
+
+	<form>
+		<label>Tekstarit:</label> 
+        <input type="text" id="tekstarit" size="4">
+        <br></br>
+        <label>Puhelut:</label>  
+        <input type="text" id="puhelut" size="4">
+        <br></br> 
+		<input type="button" value="Näytä vertailu" onclick="vertaaPaketit()">
+    </form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function vertaaPaketit() {
+			// Lomakekentän lukema arvo
+            var tekstarit = document.getElementById("tekstarit").value
+            var puhelut = document.getElementById("puhelut").value
+
+			// Muuttuja, johon lasketaan vertailutulos
+            var vertailutulos;
+            var tekstarihinta = tekstarit * 0.069
+            var puheluhinta = puhelut * 0.069
+            var pakettihinta = 29.90
+            var rajatonnetti = 19.90 + (tekstarihinta + puheluhinta)
+            
+        
+            // Jos tekstarit on 0-299,99
+			if (pakettihinta >= 0 && pakettihinta < rajatonnetti) {
+				vertailutulos = "Kokonaispaketti on edullisempi, koska erikseen hinta on " + rajatonnetti.toFixed(2) + " euroa."
+			// muuten jos tekstarit on 300-599,99
+			} else if (pakettihinta > rajatonnetti) {
+				vertailutulos = "Kokonaispaketti on kalliimpi, koska erikseen hinta on " + rajatonnetti.toFixed(2) + " euroa."
+			} else {
+				vertailutulos = "Liittymät ovat yhtä edullisia"
+			}
+
+			document.getElementById("vastaus").innerHTML = vertailutulos
+		}
+	</script>
+
+</body></html>
