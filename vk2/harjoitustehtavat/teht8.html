@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/yleverotulos.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Arvaa lukua</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Arvaa lukua</h3>
+
+	<form>
+		<label>Arvaus:</label> 
+        <input type="text" id="arvaus" size="4">
+		<input type="button" value="Arvaa" onclick="arvaaLuku()">
+    </form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+        var arvattava = Math.round((Math.random() * 99) + 1)
+        var arvausmaara = 0
+
+		function arvaaLuku() {
+            arvausmaara++
+
+			// Lomakekentän lukema arvo
+            var arvaus = document.getElementById("arvaus").value
+
+			// Muuttuja, johon lasketaan yleverotulos
+  
+            console.log('arvattava',arvattava)
+            console.log('arvausmaara',arvausmaara)
+            var arvaustulos
+    
+            
+        
+			if (arvaus < arvattava) {
+				arvaustulos = "Arvaa suurempaa"
+			} else if (arvaus > arvattava) {
+				arvaustulos = "Arvaa pienempää"
+			} else {
+				arvaustulos = "Arvasit oikein. Arvauksia yhteensä " + arvausmaara + "."
+			}
+
+			document.getElementById("vastaus").innerHTML = arvaustulos
+		}
+	</script>
+
+</body></html>

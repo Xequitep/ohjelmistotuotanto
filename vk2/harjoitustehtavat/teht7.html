@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/yleverotulos.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ohjelma yleveron laskemiseksi</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske ylevero</h3>
+
+	<form>
+		<label>Vuositulot:</label> 
+        <input type="text" id="vuositulot" size="4">
+        <br></br>
+        <label>Ikä:</label>  
+        <input type="text" id="ika" size="4">
+        <br></br> 
+		<input type="button" value="Laske ylevero" onclick="laskeIka()">
+    </form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeIka() {
+			// Lomakekentän lukema arvo
+            var vuositulot = document.getElementById("vuositulot").value
+            var ika = document.getElementById("ika").value
+
+			// Muuttuja, johon lasketaan yleverotulos
+            var yleverotulos;
+            var maksettavavero = (vuositulot - 14000) * 0.025
+    
+            
+        
+            // Jos vuositulot on 0-299,99
+			if (ika >= 18 && vuositulot > 14000 && maksettavavero <= 163) {
+				yleverotulos = maksettavavero.toFixed(2)
+			// muuten jos vuositulot on 300-599,99
+			} else if (ika >= 18 && vuositulot > 14000 && maksettavavero > 163) {
+				yleverotulos = 163
+			} else {
+				yleverotulos = 0
+			}
+
+			document.getElementById("vastaus").innerHTML = "<p>Ylevero on " + yleverotulos + " euroa </p>"
+		}
+	</script>
+
+</body></html>

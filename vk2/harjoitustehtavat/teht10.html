@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ 
+<head> 
+    <meta charset="UTF-8">
+    <title>Pitopalvelu</title>
+<!-- 
+Tee ohjelma, joka laskee tuotteen alennetun hinnan. Ohjelma kysyy tuotteen alentamattoman 
+hinnan sekä alennusprosentin. Ohjelma kertoo tuotteen alennetun hinnan. 
+Alennettu hinta lasketaan: hinta * (100.0 - pullonhinta) / 100.0. 
+ -->
+ <!-- style-elementin avulla muotoillaan lomakekentät alkamaan samasta kohtaa -->
+<style>
+    label {
+        display: block;
+        width: 11em;
+        float: left;
+    }
+</style>
+</head>
+
+<body>
+    <h3>Pitopalvelu</h3>
+
+    <form>
+        <p>
+            <label>Kutsuttujen määrä:</label>
+            <input type="text" id="kutsutut" size="6">
+        </p>
+        <p>
+            <label>Yhden pullon hinta:</label>
+            <input type="text" id="pullonhinta" size="3"> 
+        </p>
+        <p>
+            <label>Pitopalvelun per henkilö:</label>
+            <input type="text" id="pitopalveluhinta" size="3"> 
+        </p>
+        <p>
+            <label>Tuonti paikanpäälle:</label>
+            <input type="checkbox" id="kotiin">
+        </p>
+        <p>
+		   <!-- Kun painiketta painetaan, kutsutaan funktiota laskeAlennettu, joka on alkaen rivillä 43 -->
+            <input type="button" value="Laske" onclick="laskePitopalvelu()">
+        </p>
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <div id="vastaus"></div>
+
+    <script>
+        function laskePitopalvelu() {
+            var lopullinenlasku
+            // Lomakekentän kutsutut arvo 
+            var kutsutut = document.getElementById("kutsutut").value;
+
+            // Lomakekentän pullonhinta arvo
+            var pullonhinta = document.getElementById("pullonhinta").value;
+
+            // Lomakekentän pullonhinta arvo
+             var pitopalveluhinta = document.getElementById("pitopalveluhinta").value;
+
+            // Muuttujat
+            var tarvitutpullot = Math.ceil(kutsutut / 7)
+            ilmantuontia = "<p>Pulloja tarvitaan " +
+                tarvitutpullot + "</p> Juomien kustannukset " + tarvitutpullot * pullonhinta + " euroa" + "</p>Pitopalvelun hinta yhteensä " + pitopalveluhinta * kutsutut + " euroa" + "<p>Juhlien kustannukset yhteensä " + (tarvitutpullot * pullonhinta + pitopalveluhinta * kutsutut)  +  " euroa.</p>"
+         var tuonninkanssa = "<p>Pulloja tarvitaan " +
+                tarvitutpullot + "</p> Juomien kustannukset " + tarvitutpullot * pullonhinta + " euroa" + "</p>Pitopalvelun hinta yhteensä " + pitopalveluhinta * kutsutut + " euroa" + "<p> Kotiinkuljetus 20 euroa.</p>" + "<p>Juhlien kustannukset yhteensä " + (tarvitutpullot * pullonhinta + pitopalveluhinta * kutsutut + 20)  +  " euroa.</p>"
+
+if (document.getElementById("kotiin").checked == false) {
+    lopullinenlasku = ilmantuontia
+} else {
+    lopullinenlasku = tuonninkanssa
+}
+            // Kirjoitetaan vastaus html-sivulla elementtiin, jonka id:n arvo on palkkio
+            // Vastaus kirjoitetaan kahdella desimaalilla
+            document.getElementById("vastaus").innerHTML = lopullinenlasku
+        }
+    </script>
+</body>
+
+</html>

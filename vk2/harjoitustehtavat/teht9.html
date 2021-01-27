@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://myy.haaga-helia.fi/~swd1ta001/materiaalit/viikko2/sauvanpituus.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ohjelma lajikohtaisen sauvan pituuden laskemiseksi</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske sauvan pituus</h3>
+
+	<form>
+		<label>Pituutesi:</label> 
+        <input type="text" id="pituus" size="4"> cm
+        <br></br>
+        <label>Laji:</label>  
+        <select id="laji">
+            <option value="luistelu">Luisteluhiihto</option>
+            <option value="perinteinen">Perinteinen</option>
+            <option value="sauva">Sauvakävely</option>
+            </select>
+        <br></br> 
+		<input type="button" value="Laske sauvan pituus" onclick="laskeSauva()">
+    </form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeSauva() {
+			// Lomakekentän lukema arvo
+            var pituus = document.getElementById("pituus").value
+            var valittu = document.getElementById("laji").selectedIndex;
+            console.log('valittu',valittu)
+            var laji = document.getElementById("laji").options[valittu].value
+            console.log('laji',laji)
+
+			// Muuttuja, johon lasketaan sauvanpituus
+            var sauvanpituus;
+            var luistelupituus = pituus * 0.9
+            var perinteinenpituus = pituus * 0.85
+            var sauvapituus = pituus * 0.68
+    
+            
+        
+            // Jos pituus on 0-299,99
+			if (laji == "luistelu") {
+				sauvanpituus = luistelupituus
+			// muuten jos pituus on 300-599,99
+			} else if (laji == "perinteinen") {
+				sauvanpituus = perinteinenpituus
+			} else {
+				sauvanpituus = sauvapituus
+			}
+
+			document.getElementById("vastaus").innerHTML = "<p>Sopiva sauvan pituus on " + sauvanpituus + " cm.</p>"
+		}
+	</script>
+
+</body></html>
