@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ohjelma painoindeksin laskeiseen</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske painoindeksi</h3>
+
+	<form>
+		<label>Paino:</label> 
+        <input type="text" id="paino" size="4">
+        <br></br>
+        <label>Pituus:</label>
+        <input type="text" id="pituus" size="4">
+        <br></br>
+		<input type="button" value="Laske" onclick="laskePainoindeksi()">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskePainoindeksi() {
+            var paino = document.getElementById("paino").value
+            var pituus = document.getElementById("pituus").value
+
+            var painoluokka;
+            var laskettuindeksi = paino / (pituus / 100.0 * pituus / 100.0)
+    
+			if (laskettuindeksi < 18.5) {
+				painoluokka = " (normaalia alhaisempi paino)"
+			} else if (laskettuindeksi >= 18.5 && laskettuindeksi < 25.0) {
+				painoluokka = " (normaali paino)"
+			} else {
+                painoluokka = " (ylipaino)"
+            }
+
+			document.getElementById("vastaus").innerHTML = "<p>Painoindeksi on " + laskettuindeksi.toFixed(2) + painoluokka + "</p>"
+		}
+	</script>
+
+</body></html>
