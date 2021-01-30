@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Noppapeli</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Pelaa noppapeliä</h3>
+
+	<form>
+		<label>Panos:</label> 
+        <input type="text" id="panos" size="4">
+		<input type="button" value="Pelaa" onclick="pelaaNoppaa()">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function pelaaNoppaa() {
+            var panos = document.getElementById("panos").value
+
+            var noppa = Math.round((Math.random() * 5) + 1);
+            console.log('noppa',noppa)
+            var noppatulos;
+    
+			if (noppa == 1 || noppa == 3 || noppa == 5) {
+				noppatulos = " - Ei voittoa."
+			} else if (noppa == 2 || noppa == 4) {
+				noppatulos = " - voititte " + (panos * 1.25).toFixed(2) + " euroa."
+			} else {
+                noppatulos = " - voititte " + (panos * 1.5).toFixed(2) + " euroa."
+            }
+
+			document.getElementById("vastaus").innerHTML = "<p>Noppa oli " + noppa + noppatulos + "</p>"
+		}
+	</script>
+
+</body></html>

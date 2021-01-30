@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Ylinopeussakon lasku</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske ylinopeussakko</h3>
+
+	<form>
+		<label>Nopeus:</label> 
+        <input type="text" id="nopeus" size="4">
+		<input type="button" value="Kerro" onclick="laskeSakko()">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeSakko() {
+            var nopeus = parseInt(document.getElementById("nopeus").value)
+            var ylinopeus = nopeus - 60
+            var sakko;
+    
+if (ylinopeus <= 0) {
+    sakko = "Ei ylinopeutta."
+} else if (ylinopeus < 11) {
+    sakko = "Liikennevirhemaksu on 100 euroa."
+} else if (ylinopeus >= 11 && ylinopeus <= 15) {
+    sakko = "Liikennevirhemaksu on 170 euroa"
+} else if (ylinopeus > 15 && ylinopeus <= 20) {
+    sakko = "Liikennevirhemaksu on 200 euroa."
+} else {
+    sakko = "Menee päiväsakolle."
+}
+
+			document.getElementById("vastaus").innerHTML = "<p>" + sakko + "</p>"
+		}
+	</script>
+
+</body></html>
