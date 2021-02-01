@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vakuutus</title>
+<!-- 
+Tee ohjelma, joka näyttää vakuutusmaksuerät.
+-->
+</head>
+
+<body>
+	<h3>Vakuutus</h3>
+
+	<form> 
+		<p>
+			<label>Vakuutusmaksu:</label> 
+			<input type="text" id="vakuutus" size="7">
+		</p>
+		<p>
+			<label>Erien määrä: </label> 
+			<input type="text" id="erat" size="1">
+		</p>
+		<input type="button" value="Näytä erät" onclick="naytaMaksut()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+ 
+	<script>
+		function naytaMaksut() {
+			// Lomakekentän arvot
+			var vakuutus = parseFloat(document.getElementById("vakuutus").value);
+		    var erat = parseInt(document.getElementById("erat").value);
+            
+            var era = (vakuutus / erat).toFixed(2);
+            var teksti = "";
+            
+            for (var i = 1; i <= erat; i++) {
+                teksti = teksti + i + ". erä " + era + " euroa<br>";
+            }
+            
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+</body>
+</html>
