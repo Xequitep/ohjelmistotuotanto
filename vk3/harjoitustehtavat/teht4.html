@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Säästötavoite</title>
+<!-- 
+Tee ohjelma, joka näyttää saastotavoitemaksuerät.
+-->
+</head>
+
+<body>
+	<h3>Säästotavoite</h3>
+
+	<form> 
+		<p>
+			<label>Säästötavoite:</label> 
+			<input type="text" id="saastotavoite" size="7">
+		</p>
+		<p>
+			<label>Kuukausisäästö: </label> 
+			<input type="text" id="kuukausisaasto" size="1">
+		</p>
+		<input type="button" value="Kerro säästäminen" onclick="kerroSaastaminen()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+ 
+	<script>
+		function kerroSaastaminen() {
+			// Lomakekentän arvot
+			var saastotavoite = parseFloat(document.getElementById("saastotavoite").value);
+		    var kuukausisaasto = parseInt(document.getElementById("kuukausisaasto").value);
+            
+            var teksti = "";
+            var i = 0
+            
+            do {
+                i = i + 1
+                teksti = teksti + "Kuukausi " + i + ", säästössä " + i*kuukausisaasto +" euroa. <br>";
+  
+                console.log('i',i)
+            } while (i*kuukausisaasto <= saastotavoite)
+            
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+</body>
+</html>
