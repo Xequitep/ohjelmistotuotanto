@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vertauslukulaskuri</title>
+</head>
+
+<body>
+	<h3>Vertauslukujen näyttäminen ehdokkaille</h3>
+
+	<form> 
+		<p>
+			<label>Kokonaisäänimäärä:</label> 
+			<input type="text" id="kokonaisaanimaara" size="7">
+		</p>
+		<p>
+			<label>Ehdokkaiden määrä: </label> 
+			<input type="text" id="ehdokkaidenmaara" size="1">
+		</p>
+		<input type="button" value="Näytä vertausluvut" onclick="naytaVertausluvut()">
+	</form>
+
+	<div id="vastaus"></div>
+ 
+	<script>
+		function naytaVertausluvut() {
+			// Lomakekentän arvot
+			var kokonaisaanimaara = parseFloat(document.getElementById("kokonaisaanimaara").value);
+            var ehdokkaidenmaara = parseFloat(document.getElementById("ehdokkaidenmaara").value);
+
+            var teksti = "";
+            var verratutaanet
+            
+            for (var i = 1; i <= ehdokkaidenmaara; i++) {
+                verratutaanet = kokonaisaanimaara / i
+                teksti = teksti + i + ". " + verratutaanet.toFixed(0) + "<br>"
+            }
+            
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+</body>
+</html>

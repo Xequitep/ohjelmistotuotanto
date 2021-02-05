@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kertotaulu</title>
+-->
+</head>
+
+<body>
+	<h3>Kertotaulu</h3>
+
+	<form> 
+		<p>
+			<label>Luku:</label> 
+			<input type="text" id="luku" size="3">
+		</p>
+		<p>
+			<label>Esitysmuoto: </label> 
+			<select id="rivi">
+                <option value="2">2 rivillä</option>
+                <option value="3">3 rivillä</option>
+                <option value="4">4 rivillä</option>
+                </select>
+		</p>
+		<input type="button" value="Näytä" onclick="naytaKertomat()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+ 
+	<script>
+		function naytaKertomat() {
+			// Lomakekentän arvot
+			var luku = parseFloat(document.getElementById("luku").value)
+            var valittu = document.getElementById("rivi").selectedIndex
+            console.log('valittu',valittu)
+            var rivitys = document.getElementById("rivi").options[valittu].value
+            console.log('rivitys',rivitys)
+            
+            var teksti = "";
+            var i = 0
+            
+            do {
+                i = i + 1
+                if (rivitys == 2) {
+                   if (i == 2 || i == 4 || i == 6 || i == 8 || i == 10 || i == 12 || i == 14 || i == 16 || i == 18 ) {
+                       teksti = teksti + " " + i * luku + "<br>"
+                   } else {
+                    teksti = teksti + " " + i * luku
+                   }
+                    
+                } else if (rivitys == 3) {
+               if (i == 3 || i == 6 || i == 9 || i == 12 || i == 15 || i == 18) {
+                   teksti = teksti + " " + i * luku + "<br>"
+               } else {
+                teksti = teksti + " " + i * luku
+               }
+                } else {
+                    if (i == 4 || i == 8 || i == 12 ||  i == 16) {
+                       teksti = teksti + " " + i * luku + "<br>"
+                   } else {
+                    teksti = teksti + " " + i * luku }
+
+                }
+            } while (i <= 19)
+            
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+</body>
+</html>

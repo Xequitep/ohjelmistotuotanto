@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Tuloslasku noppapeliin</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske noppapelin voitto</h3>
+
+	<form>
+		<label>Kierrokset:</label> 
+        <input type="text" id="kierrokset" size="4">
+		<input type="button" value="Pelaa" onclick="pelaaNoppaa()">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function pelaaNoppaa() {
+            var kierrokset = document.getElementById("kierrokset").value
+
+            var voitot = 0
+
+
+            for (var i = 1; i <= kierrokset; i++) {
+                var noppa = Math.round((Math.random() * 5) + 1);
+                
+                if (noppa == 1 || noppa == 3 || noppa == 5) {
+				voitot = voitot
+			} else if (noppa == 2 || noppa == 4) {
+				voitot = voitot + 1.25
+			} else {
+                voitot = voitot + 1.5
+            }
+            console.log('i',i)
+            console.log('noppa',noppa)
+            console.log('voitot',voitot)
+
+            }
+    
+			
+
+			document.getElementById("vastaus").innerHTML = "Panokset oli " + kierrokset + "<br>" + "Maksetut voitot oli " + voitot.toFixed(2) + "<br> Tulokset oli " + (kierrokset - voitot).toFixed(2)
+		}
+	</script>
+
+</body></html>

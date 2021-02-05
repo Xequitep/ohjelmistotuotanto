@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Painonpudotuslaskuri</title>
+</head>
+
+<body>
+	<h3>Näyttää tavoitepainot viikoittain 10% painon laskun saavuttamiseksi 7 viikon aikaikkunalla.</h3>
+
+	<form> 
+		<p>
+			<label>Lähtöpaino:</label> 
+			<input type="text" id="lahtopaino" size="7">
+        <input type="button" value="Näytä tavoitepainot" onclick="naytaTavoitepainot()">
+    </p>
+	</form>
+	<div id="vastaus"></div>
+ 
+	<script>
+		function naytaTavoitepainot() {
+			var lahtopaino = parseInt(document.getElementById("lahtopaino").value);
+            var teksti = "";
+            var painonlasku = lahtopaino * 0.1 / 7
+
+            
+for (var i = 1; i <= 7; i++) {
+    lahtopaino = lahtopaino - painonlasku
+    teksti = teksti + (lahtopaino).toFixed(1) + "<br>"
+    
+}
+            
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+</body>
+</html>
