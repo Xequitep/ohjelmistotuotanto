@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vastaus"></div>
+    <script>
+var haepvm = new Date()
+console.log('haepvm',haepvm)
+var kk = haepvm.getMonth() + 1
+var tunnit = haepvm.getHours()
+var mitatehaan
+if (kk == 6 || kk == 7 || kk == 8) {
+    mitatehaan = "Kesällä ei kierroksia"
+} else if (tunnit > 1 && tunnit < 15) {
+    mitatehaan = "Ravintolat eivät ole auki"
+} else {
+    mitatehaan = "Nyt on kierroksen aika"
+}
+    document.getElementById("vastaus").innerHTML = "<p>" + mitatehaan + "</p>"   
+    </script>
+</body>
+</html>

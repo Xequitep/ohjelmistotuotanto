@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Opintojakson muunto</h3>
+
+    <form>
+        <p>
+            <label>Opintojakso:</label>
+            <input type="text" id="opintojakso" size="7"> 
+            <input type="button" value="Kerro" onclick="kerroOpintojakso()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function kerroOpintojakso() {
+        var opintojakso = document.getElementById("opintojakso").value
+        opintojakso.trim()
+        var lukukausi = parseInt(opintojakso.substr(3))
+        console.log('lukukausi',lukukausi)
+        var suuntautuminen = opintojakso.substr(4,2).toLowerCase()
+        console.log('suuntautuminen',suuntautuminen)
+        var suuntautuminenmuunnettu
+        
+        if (suuntautuminen == "ta") {
+suuntautuminenmuunnettu = "monimuotoinen"            
+        } else if (suuntautuminen == "tn") {
+            suuntautuminenmuunnettu = "päivän"
+        } else {
+            suuntautuminenmuunnettu = "bite"
+        }
+        
+
+
+    
+    document.getElementById("vastaus").innerHTML = "<p>" + lukukausi + ". lukukauden " + suuntautuminenmuunnettu + " opintojakso</p>"
+    }
+    </script>
+</body>
+</html>

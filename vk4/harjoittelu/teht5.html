@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="vastaus"></div>
+
+    <script>
+var haepvm = new Date()
+console.log('haepvm',haepvm)
+var pv = haepvm.getDate()
+var kk = haepvm.getMonth() + 1
+var yyyy = haepvm.getFullYear()
+var tunnit = haepvm.getHours()
+var adjustedtunnit
+if (tunnit < 10) {
+    adjustedtunnit = "0" + tunnit
+} else {
+    adjustedtunnit = tunnit   
+}
+var minuutit = haepvm.getMinutes()
+var adjustedminuutit
+if (minuutit < 10) {
+    adjustedminuutit = "0" + minuutit
+} else {
+    adjustedminuutit = minuutit   
+}
+
+var pvnumero = haepvm.getDay()
+var onkovkl
+if (pvnumero == 0 || pvnumero == 6) {
+    onkovkl = "on"
+} else {
+    onkovkl = "ei ole"
+}
+haepvm.get 
+    document.getElementById("vastaus").innerHTML = "<p>Tänään on " + pv + "." + kk + "." + yyyy + "<br>Kello on " + adjustedtunnit + ":" + adjustedminuutit + "<br>Nyt " + onkovkl +" viikonloppu</p>"   
+    </script>
+</body>
+</html>

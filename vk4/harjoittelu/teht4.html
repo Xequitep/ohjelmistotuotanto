@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Tänään on</h3>
+
+    <div id="vastaus"></div>
+
+    <script>
+var haepvm = new Date()
+console.log('haepvm',haepvm)
+var pv = haepvm.getDate()
+var kk = haepvm.getMonth() + 1
+var yyyy = haepvm.getFullYear()
+    document.getElementById("vastaus").innerHTML = "<p>Tänään on " + pv + "." + kk + "." + yyyy + "</p>"   
+    </script>
+</body>
+</html>

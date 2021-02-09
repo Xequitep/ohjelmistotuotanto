@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Opiskelijanumeron muunto</h3>
+
+    <form>
+        <p>
+            <label>Opiskelijanumero:</label>
+            <input type="text" id="opiskelijanumero" size="7"> 
+            <input type="button" value="Kerro aloitusvuosi" onclick="kerroAloitusvuosi()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function kerroAloitusvuosi() {
+        var opiskelijanumero = document.getElementById("opiskelijanumero").value
+        opiskelijanumero.trim()
+        var avuosi = parseInt(opiskelijanumero.substr(1,2))
+        console.log('avuosi',avuosi)
+        var nelinumeroinenavuosi = avuosi + 2000
+
+
+    document.getElementById("vastaus").innerHTML = "<p> Aloitusvuosi on " + nelinumeroinenavuosi + "</p>"
+    }
+    </script>
+</body>
+</html>
