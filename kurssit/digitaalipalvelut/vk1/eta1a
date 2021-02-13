@@ -1,0 +1,33 @@
+Valitse yksi sinua kiinnostava www-sivustona julkaistu digitaalinen palvelu.
+
+--Kerro sivuston osoite.--
+https://lichess.org
+
+--Esittele sivusto ja sen palvelut.--
+
+Sivustolla voi pelata shakkia, siellä voi opiskella sitä sekä katsella muiden pelejä.
+
+Arvio valitsemasi palvelun käytettävyyttä.
+Käytettävyys on selkeä ja nopea. Sivusto päivittyy todella nopeaan tahtiin, joka on käytettävyyden kannalta erittäin tärkeä seikka. Sivustolla viettää mielellään aikaa. Lichessin eri palvelut löytyvät todella helposti ja intuitiivisesti.
+
+Virheettömyyden näkökulmasta sivustolla harvoin tulee tehtyä virheitä. Tehdyt virheet saattavat johtaa pelien häviämiseen. Mikäli opiskellessa vahingossa painaa väärää nappia tai tekee jonkun muun virheen, tilanne on helppo ja intuitiivinen palauttaa aikaisempaan tilaan.
+
+Kun sivuston käytön oppii, sen toiminnot on myös helppo muistaa.
+
+Sivuston käyttöliittymä sopii todella hyvin tehtäväänsä.
+
+--Analysoi valitsemasi palvelun saavutettavuutta.--
+Saavutettavuus on huono. Sivusto välkkyy usein ja sen sisältö muuttuu jatkuvasti. Sivustolla ei ole yksinkertaista navigoida pelkän näppäimistön avustuksella. Sivuston sisältö ei ole pelkkää tekstiä, se sisältää pitkälti muuttuvia elementtejä.
+
+Sokeille ja huonosti näkeville shakkipelin pelaaminen on tehty mahdolliseksi. Siirtoja voi tehdä äänikomennoilla ja sivusto myös kertoo vastustajan siirrot äänikomennoilla. Shakkipelin kokoa on myös mahdollista muuttaa, jolloin heikomminkin näkevät onnistuvat pöydän näkemisessä. Siirtoja voi myös tehdä tekstikomennoilla.
+
+Sisältö on loogisesti jäsennelty. Sivusto ei kuitenkaan saavuta edes WCAG A-tason valmiutta.
+
+
+--Tarkista palvelu mobiilinäkökulmasta käyttäen http://www.keepitusable.com/keepitusable-mobile-app-usability-checklist.pdf -luetteloa ai jotain vastaavaa mobiiliheuristiikkaa.--
+
+Navigointi on tehty todella helpoksi. Paluu aikaisemmalle sivustolle onnistuu helposti puhelimen back-napista. Kaikki teksti sekä napit ovat selkeästi ja tiiviisti aseteltuja. Puhelinkäyttöliittymä pitää samat ominaisuudet kuin tietokonekin ja selaaminen on simppeliä. Liikkuminen sivustolla tapahtuu selkeästi, sivuston otsikko muuttuu ja sivuston vaihdon huomaa välittömästi. Värimaailma on selkeää, kontrasti tuo selkeyttä lukemiseen. Fontti on hyvä.
+
+Ei mahdollisuutta muokata sivustoa niin, että usein tehdyt toiminnot tapahtuisivat heti. Esimerkiksi tietyin pelityypin aloittaminen. Tosin ne löytyvät käyttöliittymästä vakiona etusivulta. Käyttökieli on englanti. Ääniä ei ole mahdollista ottaa pois. Sivuston ääni shakkisiirtojen teossa on kuitenkin ajoitettu hyvin ja pitää käyttäjää hyvin mukana pelissä.
+
+Kokonaisuudessaan sivuston mobiilinäkymä on todella selkeä ja helppokäyttöinen. Olemassa on myös puhelinapp, joka on vielä optimoidumpi pelaamiseen kuin puhelinkäyttöliittymä.
