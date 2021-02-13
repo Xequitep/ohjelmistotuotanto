@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Asuntolainaohjelma</h3>
+
+    <form>
+        <p>
+            <label>Ostohinta:</label>
+            <input type="text" id="ostohinta" size="7"> <br></br>
+            <label>Myyntihinta:</label>
+            <input type="text" id="myyntihinta" size="7"> <br></br>
+            <label>Myyty määrä:</label>
+            <input type="text" id="myytymaara" size="7"> <br> </br>
+            <input type="button" value="Laske" onclick="laskeVahennys()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laskeVahennys() {
+        var ostohinta = document.getElementById("ostohinta").value
+        var myyntihinta = document.getElementById("myyntihinta").value
+        var myytymaara = document.getElementById("myytymaara").value
+        var korkovahennys = laskeKorkovahennys(ostohinta, myyntihinta, myytymaara)
+
+        function laskeKorkovahennys(ostohinta, myyntihinta, myytymaara) {
+            var korkovahennys = ((myyntihinta * myytymaara) - (ostohinta * myytymaara)) * .7
+            return korkovahennys
+        }
+
+    document.getElementById("vastaus").innerHTML = "<p>Vähennys on " + korkovahennys.toFixed(2) + " euroa.</p>"
+    }
+    </script>
+</body>
+</html>

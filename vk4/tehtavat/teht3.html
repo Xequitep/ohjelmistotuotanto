@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiedot hetun perusteella</title>
+</head>
+<body>
+    <h3>Ohjelma sukupuolen ja syntymäajan kertomiseksi hetun perusteella</h3>
+
+    <form>
+        <p>
+            <label>Henkilötunnus:</label>
+            <input type="text" id="hetu" size="10"> 
+            <input type="button" value="Näytä" onclick="naytaTiedot()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function naytaTiedot() {
+        var hetu = document.getElementById("hetu").value
+        var sukupuoli
+
+        if (hetu.charAt(9) % 2 == 0) {
+            sukupuoli = "Sukupuoli on nainen."
+        } else {
+            sukupuoli = "Sukupuoli on mies."
+        }
+
+        var vuosisata
+
+        if (hetu.charAt(6) == "+") {
+            vuosisata = 1800
+        } else if (hetu.charAt(6) == "-") {
+            vuosisata = 1900
+        } else {
+            vuosisata = 2000
+        }
+
+        var syntymapaiva = laskeSyntymapaiva(hetu,vuosisata)
+
+        function laskeSyntymapaiva(hetu, vuosisata) {
+            syntymapaiva = hetu.substr(0,2) + "." + hetu.substr(2,2) + "." + (vuosisata + parseInt(hetu.substr(4,2))) 
+            return syntymapaiva
+        }
+
+
+    document.getElementById("vastaus").innerHTML = "<p>" + sukupuoli + "<br>Syntymäpäivä on " + syntymapaiva + ".</p>"
+    }
+    </script>
+</body>
+</html>

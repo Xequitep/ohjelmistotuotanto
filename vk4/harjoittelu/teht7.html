@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Bruttopalkan laskuohjelma</h3>
+
+    <form>
+        <p>
+            <label>Tunnit:</label>
+            <input type="text" id="tunnit" size="7"> 
+        </p>
+        <p>
+            <label>Tuntipalkka:</label>
+            <input type="text" id="tuntipalkka" size="7"> 
+            <br></br>
+            <input type="button" value="Laske palkka" onclick="laskePalkka()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laskePalkka() {
+        var tunnit = document.getElementById("tunnit").value
+        var tuntipalkka = document.getElementById("tuntipalkka").value
+
+        var brutto = laskeBrutto(tunnit, tuntipalkka)
+
+        function laskeBrutto(tunnit, tuntipalkka) {
+            var brutto = tunnit * tuntipalkka
+            return brutto
+        }
+
+    document.getElementById("vastaus").innerHTML = "<p>Bruttopalkka on " + brutto.toFixed(2) + " </p>"
+    }
+    </script>
+</body>
+</html>

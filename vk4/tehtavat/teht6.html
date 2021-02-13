@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakennusfirman veloitusohjelma</title>
+</head>
+<body>
+    <h3>Laske työn hinta</h3>
+    <form>
+        <p>
+            <label>Työ alkoi:</label>
+            <input type="text" id="alkoi" size="7"> <br></br>
+            <label>Työ päättyi:</label>
+            <input type="text" id="paattyi" size="7"> <br></br>
+            <input type="button" value="Laske" onclick="laskeVahennys()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+    <script>
+    function laskeVahennys() {
+        var alkoi = document.getElementById("alkoi").value
+        var paattyi = document.getElementById("paattyi").value
+        var tuntihinta = 48.00
+        var tyohinta = laskeTyohinta(alkoi, paattyi, tuntihinta)      
+
+function laskeTyohinta(alkoi, paattyi, tuntihinta) {
+    var tyohinta
+    if (alkoi.substr(0,2) > paattyi.substr(0,2)) {
+        tyohinta = "Tämän kaltainen työskentely vaatii erityisiä laskutoimituksia. Ota yhteyttä palkanlaskentaan."
+    } else {
+        tyohinta = "Työn hinta on " + (((paattyi.substr(0,2) - alkoi.substr(0,2)) + (paattyi.substr(3,2) - alkoi.substr(3,2)) / 60) * tuntihinta).toFixed(2) + " euroa."   
+    }
+    return tyohinta
+}
+    document.getElementById("vastaus").innerHTML = "<p>"+ tyohinta +"</p>"
+    }
+    </script>
+</body>
+</html>

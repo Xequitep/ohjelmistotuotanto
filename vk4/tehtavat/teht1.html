@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimen tiedot</title>
+</head>
+<body>
+    <h3>Nimen tiedot</h3>
+
+    <form>
+        <p>
+            <label>Nimi:</label>
+            <input type="text" id="nimi" size="7"> 
+            <input type="button" value="Näytä" onclick="naytaNimi()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function naytaNimi() {
+        var nimi = document.getElementById("nimi").value
+
+
+    document.getElementById("vastaus").innerHTML = "<p>Suurella: " + nimi.toUpperCase() + "<br>Pienellä: " + nimi.toLowerCase() + "<br>Merkkien määrä: " + nimi.length + "<br> Ensimmäinen merkki: " + nimi.charAt(0) + "<br>Kolme ensimmäistä merkkiä: " + nimi.substr(0,3) + "</p>"
+    }
+    </script>
+</body>
+</html>

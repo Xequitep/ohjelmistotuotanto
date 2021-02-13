@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Asuntolainaohjelma</h3>
+
+    <form>
+        <p>
+            <label>Korot:</label>
+            <input type="text" id="korot" size="7"> 
+            <input type="button" value="Laske" onclick="laskeVahennys()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laskeVahennys() {
+        var korot = document.getElementById("korot").value
+
+        var korkovahennys = laskeKorkovahennys(korot)
+
+        function laskeKorkovahennys(korot) {
+            var korkovahennys = korot * 0.15
+            return korkovahennys
+        }
+
+    document.getElementById("vastaus").innerHTML = "<p>Vähennys on " + korkovahennys.toFixed(2) + " euroa.</p>"
+    }
+    </script>
+</body>
+</html>

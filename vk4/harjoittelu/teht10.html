@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Asuntolainaohjelma</h3>
+
+    <form>
+        <p>
+            <label>Ajetut kilometrit vuodessa:</label>
+            <input type="text" id="kilometrit" size="7"> <br></br>
+            <label>Kulutus / 100km:</label>
+            <input type="text" id="kulutus" size="7"> <br></br>
+            <label>Käyttövoimavero:</label>
+            <input type="text" id="kayttovoimavero" size="7"> <br> </br>
+            <input type="button" value="Laske" onclick="laskeVahennys()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laskeVahennys() {
+        var kilometrit = document.getElementById("kilometrit").value
+        var kulutus = document.getElementById("kulutus").value
+        var kayttovoimavero = document.getElementById("kayttovoimavero").value
+        var hinnankorotus = laskeHinnankorotus(kilometrit, kulutus)
+        var korkovahennys = laskeKorkovahennys(hinnankorotus, kayttovoimavero)
+        
+
+function laskeHinnankorotus(kilometrit, kulutus) {
+    var hinnankorotus = kilometrit/100 * kulutus * 0.2595
+    return hinnankorotus
+}
+
+
+        
+        function laskeKorkovahennys(hinnankorotus, kayttovoimavero) {
+            var korkovahennys = hinnankorotus - kayttovoimavero
+            return korkovahennys
+        }
+        
+        console.log('hinnankorotus',hinnankorotus)
+        console.log('korkovahennys',korkovahennys)
+
+    document.getElementById("vastaus").innerHTML = "<p>Vähennys on " + korkovahennys.toFixed(2) + " euroa.</p>"
+    }
+    </script>
+</body>
+</html>

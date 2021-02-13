@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelakorvaus lääkärikäynnistä</title>
+</head>
+<body>
+    <h3>Laske kelakorvaus lääkärikäynnistä</h3>
+
+    <form>
+        <p>
+            <label>Kesto:</label>
+            <input type="text" id="kesto" size="3"> min
+            <br></br>
+            <input type="button" value="Laske" onclick="laske()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laske() {
+        var kesto = document.getElementById("kesto").value
+
+        var korvaus = laskeKorvaus(kesto)
+
+        function laskeKorvaus(kesto) {
+            var korvaus
+            if (kesto <= 10) {
+                korvaus = 7.00
+            } else if (kesto <= 20) {
+                korvaus = 9.00
+            } else {
+                korvaus = 11.00
+            }
+            return korvaus
+        }
+
+    document.getElementById("vastaus").innerHTML = "<p>Kelakorvaus on " + korvaus.toFixed(2) + " euroa.</p>"
+    }
+    </script>
+</body>
+</html>

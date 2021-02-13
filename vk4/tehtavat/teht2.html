@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerro ikä</title>
+</head>
+<body>
+    <h3>Ohjelma iän kertomiseksi syntymävuoden perusteella</h3>
+
+    <form>
+        <p>
+            <label>Syntymävuosi:</label>
+            <input type="text" id="syntymavuosi" size="7"> 
+            <input type="button" value="Suurenna" onclick="naytaIka()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function naytaIka() {
+        var haepvm = new Date()
+        var yyyy = haepvm.getFullYear()
+        var syntymavuosi = document.getElementById("syntymavuosi").value
+        var kerrottuvuosi
+
+        if (syntymavuosi > yyyy) {
+            kerrottuvuosi = "Syntymävuosi ei voi olla tulevaisuudessa."
+        } else {
+            kerrottuvuosi = "Olet tänä vuonna " + (yyyy - syntymavuosi) + " vuotta."
+        }
+
+
+    document.getElementById("vastaus").innerHTML = "<p>" + kerrottuvuosi + "</p>"
+    }
+    </script>
+</body>
+</html>

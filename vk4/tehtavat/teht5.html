@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matkavähennykset verotuksessa</title>
+</head>
+<body>
+    <h3>Laske matkavähennykset verotuksessa</h3>
+
+    <form>
+        <p>
+            <label>Matkakulut:</label>
+            <input type="text" id="matkakulut" size="7"> euroa
+            <br></br>
+            <input type="button" value="Laske" onclick="laske()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laske() {
+        var matkakulut = document.getElementById("matkakulut").value
+
+        var vahennys = laskeVahennys(matkakulut)
+
+        function laskeVahennys(matkakulut) {
+            var vahennys
+ if (matkakulut <= 750) {
+     vahennys = 0
+ } else {
+     vahennys = matkakulut - 750
+ }
+            return vahennys
+        }
+
+    document.getElementById("vastaus").innerHTML = "<p>Vähennys on " + vahennys.toFixed(2) + " euroa.</p>"
+    }
+    </script>
+</body>
+</html>
