@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kurssit</title>
+<!-- 
+Ohjelmalla listataan valmiiksi annetusta taulukosta kurssit 
+sekä kerrotaan, montako kertaa tietty auto on taulukossa 
+ja lisätään uusi auto taulukkoon. 
+ -->
+</head>
+ 
+<body>
+	<h3>Kurssit</h3>
+
+	<p id="listaus"></p>
+    
+	<script>
+		// Esitellään taulukko, jossa on valmiina automerkit, taulukko on globaali
+		// Jos taulukko esitellään funktioon, se katoaa joka kerta funktion lopussa eli tiedot eivät säily
+        var kurssit = ["swd1ta001", "swd1tn001", "big1ta001", "big1tn001",
+ "ict1ta010", "ict1tn010", "sal1ta001", "sal1tn001"];
+
+		// Listataan heti sivulle kurssit
+		listaa();
+
+		// funktio listaa taulukon sisällön
+		function listaa() {
+			var teksti = "";
+
+			// Käydään taulukko läpi ja kootaan taulukossa olevat arvot teksti-muuttujaan
+			// Tarkasta, että length on kirjoitettu oikein omassa koodissasi
+			for (var i = 0; i < kurssit.length; i++) {
+				teksti = teksti + "<a href='https://myy.haaga-helia.fi/~" + kurssit[i] + "'>" + kurssit[i] +"<a/>" + "<br>";
+			}
+
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+
+</body>
+</html>
