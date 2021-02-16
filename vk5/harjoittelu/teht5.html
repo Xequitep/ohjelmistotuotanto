@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Autot</title>
+<!-- 
+Ohjelmalla listataan valmiiksi annetusta taulukosta autot 
+sekä kerrotaan, montako kertaa tietty auto on taulukossa 
+ja lisätään uusi auto taulukkoon. 
+ -->
+</head>
+ 
+<body>
+
+	<form>
+		<label>Nimi:</label> 
+		<input type="text" id="lisattava" size="10"> 
+        <input type="button" value="Lisää" onclick="lisaa()">
+	</form>
+    
+    Nimet ovat:
+	<p id="listaus"></p>
+
+
+	<script>
+		// Esitellään taulukko, jossa on valmiina automerkit, taulukko on globaali
+		// Jos taulukko esitellään funktioon, se katoaa joka kerta funktion lopussa eli tiedot eivät säily
+		var autot = [];
+
+		// Listataan heti sivulle autot
+		listaa();
+
+		// funktio listaa taulukon sisällön
+		function listaa() {
+			var teksti = "";
+
+			// Käydään taulukko läpi ja kootaan taulukossa olevat arvot teksti-muuttujaan
+			// Tarkasta, että length on kirjoitettu oikein omassa koodissasi
+            
+            autot.sort()
+            for (var i = 0; i < autot.length; i++) {
+				teksti = teksti + autot[i] + "<br>";
+			}
+
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+
+		// funktio lisää uuden automerkin taulukoon
+		function lisaa() {
+			var lisattava = document.getElementById("lisattava").value.toUpperCase();
+			var paikka = autot.length;
+			autot[paikka] = lisattava;
+			// tai
+			//autot.push(lisattava);
+
+			// Päivitetään listaus html sivulle
+			listaa();
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kurssit</title>
+<!-- 
+Ohjelmalla listataan valmiiksi annetusta taulukosta kurssit 
+sekä kerrotaan, montako kertaa tietty auto on taulukossa 
+ja lisätään uusi auto taulukkoon. 
+ -->
+</head>
+ 
+<body>
+	<h3>Kurssit</h3>
+
+	<p id="listaus"></p>
+    <script type="text/javascript"
+src="https://myy.haaga-helia.fi/~swd1ta001/koodit/vitsit.js"></script>
+    <script>
+		// Esitellään taulukko, jossa on valmiina automerkit, taulukko on globaali
+        // Jos taulukko esitellään funktioon, se katoaa joka kerta funktion lopussa eli tiedot eivät säily
+
+		// Listataan heti sivulle kurssit
+        listaa()
+        setInterval(listaa, 3000)
+        var vanhapaikka = 0
+        var paikka = 0
+
+
+        // funktio listaa taulukon sisällön
+		function listaa() {
+            var teksti = "";
+            vanhapaikka = paikka
+            //Arpoo lukua niin pitkään, kun saa sieltä eri luvun kun on ollut aikaisemmin (vanhapaikka ottaa arvokseen aikaisemman paikan eli näytetyn vitsin arvon)
+            while (vanhapaikka == paikka) {
+                paikka = Math.floor((Math.random() * vitsit.length))}
+
+			// Käydään taulukko läpi ja kootaan taulukossa olevat arvot teksti-muuttujaan
+            // Tarkasta, että length on kirjoitettu oikein omassa koodissasi
+            teksti = teksti + vitsit[paikka]
+
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</p>";
+            
+            
+		}
+	</script>
+
+</body>
+</html>
