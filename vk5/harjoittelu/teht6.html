@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Koepisteet</title>
+<!-- 
+Ohjelmalla listataan valmiiksi annetusta taulukosta koepisteet 
+sekä kerrotaan, montako kertaa tietty auto on taulukossa 
+ja lisätään uusi auto taulukkoon. 
+ -->
+</head>
+ 
+<body>
+	<h3>Koepisteet</h3>
+
+	<p id="listaus"></p>
+
+	<p id="vastaus"></p>
+
+	<form>
+		<label>Koepiste:</label> 
+		<input type="text" id="lisattava" size="10"> 
+		<input type="button" value="Lisää" onclick="lisaa()">
+	</form>
+
+	<script>
+		// Esitellään taulukko, jossa on valmiina automerkit, taulukko on globaali
+		// Jos taulukko esitellään funktioon, se katoaa joka kerta funktion lopussa eli tiedot eivät säily
+		var koepisteet = [];
+
+		// Listataan heti sivulle koepisteet
+		listaa();
+
+		// funktio listaa taulukon sisällön
+		function listaa() {
+            var teksti = "";
+            var summa = 0
+            var keskiarvo
+
+			// Käydään taulukko läpi ja kootaan taulukossa olevat arvot teksti-muuttujaan
+			// Tarkasta, että length on kirjoitettu oikein omassa koodissasi
+			for (var i = 0; i < koepisteet.length; i++) {
+				teksti = teksti + koepisteet[i] + " ";
+            }
+            
+            for (var i= 0; i < koepisteet.length; i++) {
+                summa = (summa + parseInt(koepisteet[i]))
+            }
+
+            if (koepisteet.length == 0) {
+                keskiarvo = "Lisää koepisteitä muodostaaksesi keskiarvon."
+            } else {
+                keskiarvo = "Keskiarvosi on " + summa / koepisteet.length
+            }
+
+			// Vastauksen kirjoittaminen html-sivulle
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</br>" + keskiarvo + "</p>";
+		}
+
+		// funktio lisää uuden automerkin taulukoon
+		function lisaa() {
+            var lisattava = document.getElementById("lisattava").value;
+            koepisteet.push(lisattava)
+document.getElementById("lisattava").value = ""
+
+			// Tyhjennetään etsinnän vastaus
+			document.getElementById("vastaus").innerHTML = "";
+
+			// Päivitetään listaus html sivulle
+			listaa();
+		}
+	</script>
+
+</body>
+</html>

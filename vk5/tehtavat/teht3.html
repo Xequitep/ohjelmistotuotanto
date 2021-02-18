@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Veriryhmien haku</title>
+</head>
+ 
+<body>
+	<h3>Veriryhmien haku</h3>
+
+	<p id="listaus"></p>
+
+	<form>
+		<label>Haettava veriryhmä:</label> 
+		<input type="text" id="haettava" size="10"> 
+		<input type="button" value="hae" onclick="hae()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		var veriryhmat =  ["A+", "O-", "AB+", "O+", "AB+", "AB+", "O-", "AB+", "O+", "AB+"]
+
+		function hae() {
+			var haettava = document.getElementById("haettava").value;
+			var maara = 0;
+
+			for (var i = 0; i < veriryhmat.length; i++) {
+				if (veriryhmat[i] == haettava) {
+					maara = maara + 1
+				}
+			}
+
+			document.getElementById("vastaus").innerHTML = "<p>Veriryhmiä " +
+                    haettava + " on " + maara + " kappaletta</p>";
+
+                    document.getElementById("haettava").value = ""
+		}
+	</script>
+
+</body>
+</html>
