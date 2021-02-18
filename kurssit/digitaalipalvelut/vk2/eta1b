@@ -1,0 +1,20 @@
+---Ketkä ovat mielestäsi sivuston loppukäyttäjät? Kenelle sivusto on suunnattu? Mitkä ovat siis sivuston kohderyhmät?---
+
+lichess on shakin pelaamiseen ja sen opiskeluun suunnattu palvelu. Shakki on lautapeli, analyyttinen peli ja seurapeli. Sen pelaamisella voi olla monia hyötyjä, kuten esimerkiksi muistin parantaminen ja keskittymiskyvyn kehittäminen.
+
+Hyvä ja rajattu kohderyhmä lichess voi olla seuraava:
+Shakista kiinnostuneet, lautapeleistä kiinnostuneet, analyyttisista peleistä kiinnostuneet, kuten pokerin pelaajat, backgammonin pelaajat, Go:n pelaajat. Myös muistin kehittämisestä kiinnostuneet, kuten ristikoiden ratkojat.
+
+Shakki on peli, jota voi pelata lapsesta vaariin. Hyvä ikäkohdennus voisi olla yli 4 vuotiaat. Sukupuolella ei ole väliä eikä tulotasolla.
+
+Hyvä paikka kohdentaa mainontaa olisi ryhmät, jotka eivät ole vielä oivaltaneet sitä, että lautapelejä kuten shakkia on myös loistava pelata internetissä.
+
+---Kuvaa palvelun käyttäjäpolku(t).---
+Käyttäjä tulee sivulla. Mikäli käyttäjä haluaa pelata shakkia, hän painaa sopivaa timeformaattia isoista napeista, jotka löytyvät heti etusivulta isoina neliöinä vieri vieressä. Mikäli käyttäjä innostuu palvelusta, hän luultavasti luo tilin. Tähän ei kuitenkaan ole erityisen selkeää polkua. Käyttäjää ei missäkään vaiheessa kannusteta käyttäjätilin luomiseen. Sivun yläreunassa on ainoastaan painike, josta voi kirjautua sisään, "SIGN IN". Sitä kautta voi myös luoda tilin, mutta se ei ole todella intuitiivisesti ja selkeästi suunnattua. Käyttäjätilin luominen on tärkeä elementti sivuston jatkuvaan käyttämiseen, sivuston koukuttavat ominaisuudet, kuten oman rankingin seuraaminen ja kehittyminen ylipäätänsä ovat voimakkaasti linkittyneitä omalla käyttäjätilillä pelaamiseen ja opiskeluun.
+
+Kun pelin kuitenkin aloittaa, niin käyttäjäpolku on hyvin selkeä. Mikäli on sinun aloituksesi, sivusto ohjaa sinut automaattisesti tekemään aloitusta. Laittomia siirtoja ei ole mahdollista tehdä, sivusto antaa siitä virheilmoituksen ja vetää siirron takaisin. Silloin huomaa selkeästi, että on aika tehdä uusi siirto. Sivusto näyttää jatkuvasti, kenen siirtovuoro on ja paljonko on aikaa jäljellä. Sivusto antaa myös äänimerkkejä siitä kun aika on vähissä. Kun peli on ohi, sivusto ohjaa automaattisesti aloittamaan uuden samanlaisen pelin tai halutessasi ohjaa analysoimaan peliä. Tämä on tehty jokaisella käyttöliittymällä samanlaiseksi, todella intuitiiviseksi ja ohjaa käyttäjää tekemään jonkun näistä valinnoisat. Myös uuden matsin aloittaminen samaa vastustajaa vastaan onnistuu napin painalluksella. Vastustaja voi myös haastaa sinut ja silloin sinulle tulee samantien ilmoitus siitä, jonka voit hyväksyä tai hylätä.
+
+Itse pelikokemus on tehty yksinkertaiseksi.
+
+---Mitkä seikat vaikuttavat palvelun käyttäjäkokemukseen?---
+Sivuston ulkoasu on todella tyylikäs, se luo halua jatkaa pelaamista. Palvelussa on myös kustomointimahdollisuuksia, jolloin sivuston käytöstä voi luoda persoonallista. Asetuksista voi valita "dark-moden", jolloin tausta on pimeämpi. Tämä on omasta mielestäni yksi tärkeimpiä seikkoja käyttäjäkokemuksen parantamiseksi nykypäivän sivustoilla. Myös shakkilautaa voi mukauttaa, joka parantaa UX merkittävästi. Sivusto ohjaa sinua automaattisesti jatkuvasti, jolloinka ei tarvitse miettiä mitään muuta kuin sitä, mitä sivustolla milloinkin haluaa tehdä. Paikat, johon sivusto ei ohjaa löytyvät todella helposti. Sivuston käyttö on todella intuitiivista, kaunista ja helppoa, joka luo todella upean käyttäjäkokemuksen.
