@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arvonta</title>
+</head>
+ 
+<body>
+	<h3>Arvonta</h3>
+	<form>
+		<label>Nimi:</label> 
+		<input type="text" id="nimi" size="10"> 
+        <input type="button" value="Lisää" onclick="lisaa()">
+        <input type="button" value="Arvo" onclick="arvo()">
+    </form>
+    <p id="listaus"></p>
+
+    <p id="vastaus"></p>
+
+    <p id="arvontatulos"></p>
+	<script>
+		var nimet = []
+        listaa()
+		function listaa() {
+            var teksti = ""
+
+			for (var i = 0; i < nimet.length; i++) {
+				teksti = teksti + nimet[i] + " "
+            }
+
+            if (nimet.length == 0) {
+                nimistatus = "Aloita lisäämällä nimi"
+            } else {
+                nimistatus = "Annetut nimet: "
+            }
+			document.getElementById("listaus").innerHTML = "<p>" + nimistatus + teksti + "</p>"
+		}
+		function lisaa() {
+            var nimi = document.getElementById("nimi").value
+            nimet.push(nimi)
+            document.getElementById("nimi").value = ""
+			document.getElementById("vastaus").innerHTML = ""
+			listaa()
+        }
+        function arvo() {
+            var voittaja
+            if (nimet.length <= 1) {
+                voittaja = "Aloita arpominen vähintään kahdella nimellä"
+            } else {
+                voittaja = "Voittaja on " + nimet[Math.floor(Math.random() * nimet.length)]
+            }
+            document.getElementById("arvontatulos").innerHTML = voittaja
+        }
+	</script>
+
+</body>
+</html>

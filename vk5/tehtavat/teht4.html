@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kuvat</title>
+</head>
+ 
+<body>
+    <h3>Kuvat</h3>
+	<p id="listaus"></p>
+    <script>
+        var kuvat = [
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/assi.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/myynti.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/tiko.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen1.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen2.jpg"
+];
+        listaa()
+		function listaa() {
+            var teksti = "";
+            for (var i = 0; i < kuvat.length; i++) {
+                teksti = teksti + "<img src='" + kuvat[i] + "' height='100' width='100'>"
+                
+            }
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+
+</body>
+</html>

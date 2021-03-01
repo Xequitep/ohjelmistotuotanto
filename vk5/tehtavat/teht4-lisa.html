@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kuvat</title>
+</head>
+ 
+<body>
+    <h3>Kuvat (kuva vaihtuu 2s välein)</h3>
+	<p id="listaus"></p>
+    <script>
+        var kuvat = [
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/assi.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/myynti.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/tiko.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen1.jpg",
+ "https://myy.haaga-helia.fi/~swd1ta001/kuvatJS/yleinen2.jpg"
+];
+listaa()
+setInterval(listaa, 2000)
+var vanhapaikka = 0
+var paikka = 0
+		function listaa() {
+            var teksti = ""
+            vanhapaikka = paikka
+            while (vanhapaikka == paikka) {
+                paikka = Math.floor((Math.random() * kuvat.length))}
+                teksti = teksti + "<img src='" + kuvat[paikka] + "' height='100' width='100'>"
+            
+			document.getElementById("listaus").innerHTML = "<p>" + teksti + "</p>";
+		}
+	</script>
+
+</body>
+</html>
