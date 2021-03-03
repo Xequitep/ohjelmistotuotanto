@@ -7,3 +7,27 @@ body {
   color: black;
   font-family: 'Roboto', sans-serif;
 }
+header,
+footer {
+  text-align: center;
+}
+nav p {
+  width: 20em;
+  margin: auto;
+  border: solid rgb(0, 0, 255) 1px;
+}
+@media only screen and (max-width: 420px) {
+  body {
+    background-color: red;
+  }
+}
+@media only screen and (min-width: 421px) {
+  body {
+    background-color: indianred;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: blue;
+  }
+}

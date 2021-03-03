@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sananlasku</title>
+<!--
+Ohjelma näyttää JSON-muodossa saamansa sananlaskun
+ -->
+</head>
+<body> 
+	<h3>Sananlasku</h3>
+
+	<div id="vastaus"></div>
+
+	<script type="text/javascript">
+	
+	function haeSananlasku() {
+		// Pyydetään sanalaskua fetch komennolla
+		fetch("https://quotes.rest/qod?category=students")
+			// Kun saadaan vastaus, luetaan sen JSON-sisältö ja tulkitaan JavaScript-objektiksi
+			.then(function (response) {
+                return response.json();  // json-metodi palauttaa JavaScript-objektin
+            })
+			// Tiedot näytetään HTML sivulla
+			.then(function (data) {
+                console.log('data',data)
+				document.getElementById("vastaus").innerHTML = "<p>" + data.contents.quotes[0].quote + 
+				"<br>- " + data.contents.quotes[0].author + " -</p>";
+            }
+            )
+			// Jos tuli jokin virhe
+			.catch(function (error) {
+				console.error(error);
+				document.getElementById("vastaus").innerHTML = "<p>Koodauksen onnea<br >-Sirpa-</p>";
+			})
+    }
+	// Jotta funktio suoritetaan, sitä on kutsuttava
+    haeSananlasku();
+	</script>
+</body>
+</html>

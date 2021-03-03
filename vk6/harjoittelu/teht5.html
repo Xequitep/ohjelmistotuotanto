@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Avoimet työpaikat, Vantaa</title>
+<!--
+Ohjelma näyttää JSON-muodossa saamansa sananlaskun
+ -->
+</head>
+<body> 
+	<h3>Avoimet työpaikat, Vantaa</h3>
+
+	<div id="vastaus"></div>
+
+	<script type="text/javascript">
+	
+	function haeTyopaikat() {
+		// Pyydetään sanalaskua fetch komennolla
+		fetch("https://gis.vantaa.fi/rest/tyopaikat/v1/Opetusala")
+			// Kun saadaan vastaus, luetaan sen JSON-sisältö ja tulkitaan JavaScript-objektiksi
+			.then(function (response) {
+                return response.json()
+            })
+			// Tiedot näytetään HTML sivulla
+			.then(function (data) {
+                console.log('data',data)
+                var teksti = ""
+                for (var i=0; i<data.length; i++) {
+                    teksti = teksti + "<b>" + data[i].tyotehtava + "</b><br>Osoite: " + data[i].osoite + "<br>Haku päättyy: " + data[i].haku_paattyy_pvm + "<br><br>"
+                }
+				document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+            }
+            )
+			// Jos tuli jokin virhe
+			.catch(function (error) {
+				console.error(error);
+				document.getElementById("vastaus").innerHTML = "<p>Koodauksen onnea<br >-Sirpa-</p>";
+			})
+    }
+		
+	// Jotta funktio suoritetaan, sitä on kutsuttava
+    haeTyopaikat();
+	</script>
+</body>
+</html>

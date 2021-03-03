@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Päivän avaruusmedia</title>
+<!--
+Ohjelma näyttää JSON-muodossa saamansa sananlaskun
+ -->
+</head>
+<body> 
+	<h3>Päivän avaruusmedia</h3>
+
+	<div id="vastaus"></div>
+
+	<script type="text/javascript">
+	
+	function naytaMediatiedosto() {
+		// Pyydetään sanalaskua fetch komennolla
+		fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+			// Kun saadaan vastaus, luetaan sen JSON-sisältö ja tulkitaan JavaScript-objektiksi
+			.then(function (response) {
+                return response.json();  // json-metodi palauttaa JavaScript-objektin
+            })
+			// Tiedot näytetään HTML sivulla
+			.then(function (data) {
+                console.log('data',data)
+                var naytamedia = ""
+                if (data.media_type == "image") {
+                    naytamedia = "<img src='" + data.url + "'/>"
+                } else {
+                    naytamedia = "<iframe src='" + data.url + "'></iframe>"
+                }
+				document.getElementById("vastaus").innerHTML = naytamedia
+            }
+            )
+			// Jos tuli jokin virhe
+			.catch(function (error) {
+				console.error(error);
+				document.getElementById("vastaus").innerHTML = "<p>Koodauksen onnea<br >-Sirpa-</p>";
+			})
+    }
+	// Jotta funktio suoritetaan, sitä on kutsuttava
+    naytaMediatiedosto();
+	</script>
+</body>
+</html>
