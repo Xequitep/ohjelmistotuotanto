@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Opiskelijan tiedot</title>
+</head>
+<body>
+	<h3>Opiskelijan tiedot</h3>
+
+	<div id="vastaus"></div>
+
+    <script type="text/javascript">
+    
+    var opiskelija = {
+"tunnus": "a1234567",
+"nimi": {
+ "etunimi": "Pekka",
+ "sukunimi": "Virtanen",
+ },
+ "osoite": {
+ "lahiosoite": "Virtakatu 11",
+ "postinumero": "12345",
+ "postitoimipaikka": "Virtala",
+ },
+"puhelimet": [
+ {"numero": "050-123456", "tyyppi": "työ"},
+ {"numero":"050-7654321", "tyyppi": "henkilökohtainen"},
+ {"numero":"050-1234321", "tyyppi": "salainen"}
+ ],
+}
+ 	
+	function listaa() {
+			var teksti = "Tunnus: " + opiskelija.tunnus + "<br>"
+			teksti = teksti + "Nimi: " + opiskelija.nimi.etunimi + " " + opiskelija.nimi.sukunimi + "<br>"
+            teksti = teksti + "Osoite: " + opiskelija.osoite.lahiosoite + ", " + opiskelija.osoite.postinumero + " " + opiskelija.osoite.postitoimipaikka
+            teksti = teksti + "<br>Puhelimet: "
+
+            for (let i = 0; i < 2; i++) {
+                teksti = teksti + opiskelija.puhelimet[i].numero + "(" + opiskelija.puhelimet[i].tyyppi + ") "
+                
+            }
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+	}
+
+	listaa();
+	</script>
+</body>
+</html>

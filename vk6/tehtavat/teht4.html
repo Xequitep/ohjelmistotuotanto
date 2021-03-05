@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sää, Helsinki</title>
+</head>
+<body> 
+	<h3>Helsinki</h3>
+
+    <div id="vastaus"></div>
+    
+	<script type="text/javascript">
+	
+	function haeSaa() {
+		fetch("http://api.openweathermap.org/data/2.5/weather?lang=fi&q=helsinki&units=metric&APPID=e7c37b351780ee19e648ed36d31bb674")
+			.then(function (response) {
+                return response.json()
+            })
+			.then(function (data) {
+                console.log('data',data)
+                var teksti = data.weather[0].description
+                teksti = teksti + "<br>Lämpötila: " + data.main.temp.toFixed(0)
+                teksti = teksti + "°C<br>Tuuli: " + data.wind.speed.toFixed(0)
+                teksti = teksti + " m/s<br> Pilvisyys: " + data.clouds.all + "%"
+				document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+            }
+            )
+			.catch(function (error) {
+				console.error(error);
+				document.getElementById("vastaus").innerHTML = "<p>Jotain meni vikaan. Better luck next time.</p>";
+			})
+    }
+    haeSaa()
+	</script>
+</body>
+</html>
