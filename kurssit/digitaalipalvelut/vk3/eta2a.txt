@@ -1,0 +1,8 @@
+Yleisesittely:
+Sivusto on mun ja co-hostini Marleenan podcastille. Sivuston tavoite on olla yksi ylimääräinen alusta, joka nivoo muut alustat (youtube, redcircle, facebook) yhteen. Sivusto auttaa meitä pitämään projektiimme / projekteihimme liittyvät tiedot yhdessä paikassa sekä auttamaan meistä kiinnostuneita olemaan meihin yhteydessä. Kohderyhmänä meidän podcastista kiinnostuneet henkilöt, jotka haluavat saada lisätietoa meistä ja olla meihin yhteydessä. Paikka, jota muut voivat levittää selkeänä paikkana, josta meihin saa yhteyden ja meistä lisätietoa. 
+
+Sivustokartta:
+"Amir ja Marleena" index.html
+"Podcast" podcast.html
+"Meistä" meista.html
+"Ota yhteyttä" otayhteytta.html

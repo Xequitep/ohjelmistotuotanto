@@ -12,22 +12,62 @@ footer {
   text-align: center;
 }
 nav p {
-  width: 20em;
+  width: 19em;
   margin: auto;
   border: solid rgb(0, 0, 255) 1px;
+  border-style: dashed;
+  border-radius: 20px 20px 30px 30px;
+  padding: 4px;
+  font-size: 18px;
 }
+main {
+  display: flex;
+}
+.flex-container {
+  display: flex;
+}
+.flex-item1 {
+  flex: 1;
+  padding-right: 5px;
+}
+.flex-item2 {
+  flex: 1;
+  padding-right: 5px;
+}
+.tuotekuva {
+  width: 80%;
+  display: block;
+  margin: auto;
+  border: 2px blue solid;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 420px) {
   body {
     background-color: red;
+  }
+  .flex-container {
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 421px) {
   body {
     background-color: indianred;
   }
+  main {
+    background-image: url(kuvat/tausta_kuppi.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
 }
 @media only screen and (min-width: 1024px) {
-  body {
-    background-color: blue;
+  :root {background-image:url(kuvat/tausta_100.jpg);
+    background-repeat: no-repeat;
+    background-size: cover}
+
+ body {width:80%;
+       margin:5px auto;
+       border: 2px black solid }
+
   }
 }
