@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Asuntolainaohjelma</h3>
+
+    <form>
+        <p>
+            <label>Perintö:</label>
+            <input type="text" id="perinto" size="7"> 
+            <input type="button" value="Laske" onclick="laskePerintovero()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function laskePerintovero() {
+        var perinto = document.getElementById("perinto").value
+
+        var perintovero = laskePerintovero(perinto)
+
+        function laskePerintovero(perinto) {
+        var perintovero
+
+        if (perinto < 20000) {
+            perintovero = 0
+        } else if (perinto >= 20000 && perinto < 40000) {
+            perintovero = (100 + (perinto - 20000) * 0.07)
+        } else if (perinto < 60000) {
+            perintovero = (1500 + (perinto - 40000) * 0.10)
+        } else if (perinto < 200000 ) {
+            perintovero = (3500 + (perinto - 60000) * 0.13)
+        } else if (perinto < 1000000) {
+            perintovero = (21700 + (perinto - 200000) * 0.16)
+        } else {
+            perintovero = (149700 + (perinto - 1000000) * 0.19)
+        }
+        return perintovero
+
+        }
+        console.log('perintovero',perintovero)
+
+    document.getElementById("vastaus").innerHTML = "<p>Perinnöstä " + perinto + " maksetaan veroa " + perintovero.toFixed(2) + "</p>"
+    }
+    </script>
+</body>
+</html>

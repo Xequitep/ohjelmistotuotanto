@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Lentokentällä oltava</title>
+</head>
+
+<body class="vsc-initialized">
+	<h3>Laske kenttaaikapaikalla</h3>
+
+	<form>
+		<label>Lähtöaika (hh.mm):</label> 
+        <input type="text" id="lahtoaika" size="4">
+		<input type="button" value="Kerro" onclick="laskeAika()">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laskeAika() {
+            var lahtoaika = parseInt(document.getElementById("lahtoaika").value)
+            console.log('lahtoaika',lahtoaika)
+            var lahtoaikaminuutit = document.getElementById("lahtoaika").value.slice(-2)
+            var paikalla;
+    
+if (lahtoaika == 0) {
+    paikalla = "Oltava kentällä " + (24 - 2) + "." + lahtoaikaminuutit + " edellisenä päivänä!" 
+} else if (lahtoaika == 1) {
+    paikalla = "Oltava kentällä " + (24 - 1) + "." + lahtoaikaminuutit + " edellisenä päivänä!" 
+} else if (lahtoaika == 2) {
+    paikalla = "Oltava kentällä " + "0." + lahtoaikaminuutit + " edellisenä päivänä!" 
+} else {
+    paikalla = "Oltava kentällä " + (lahtoaika - 2) + "." + lahtoaikaminuutit
+}
+
+			document.getElementById("vastaus").innerHTML = "<p>" + paikalla + "</p>"
+		}
+	</script>
+
+</body></html>

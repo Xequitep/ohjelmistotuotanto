@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Opiskelijan tiedot</title>
+</head>
+<body>
+	<h3>Opiskelijan tiedot</h3>
+
+	<form>
+		<label>Lähtöpaikka:</label> 
+		<input type="text" id="etsittava" size="10"> 
+		<input type="button" value="Etsi" onclick="etsi()">
+		<input type="button" value="Listaa" onclick="listaa()">
+		<input type="button" value="Laske korvaus" onclick="laskeKorvaus()">
+	</form>
+
+	<div id="vastaus"></div>
+
+    <script type="text/javascript">
+    
+var ajopaivakirja = {
+rekisterinro: "XYZ-123",
+laatija: "Risto Reipas",
+ajot: [
+{
+lahtolukema: "32500",
+lahtoaika: "13:30",
+lahtopaiva: "2019-06-01",
+lahtopaikka: "Ratapihantie 13, Helsinki",
+loppulukema: "32510",
+loppuaika: "13:50",
+loppupaiva: "2019-06-01",
+loppupaikka: "Hietakummuntie 1, Helsinki"
+},
+{
+lahtolukema: "32510",
+lahtoaika: "16:00",
+lahtopaiva: "2019-06-06",
+lahtopaikka: "Hietakummuntie 1, Helsinki",
+loppulukema: "32520",
+loppuaika: "16:25",
+loppupaiva: "2019-06-06",
+loppupaikka: "Ratapihantie 13, Helsinki"
+},
+{
+lahtolukema: "33210",
+lahtoaika: "33210",
+lahtopaiva: "2019-06-08",
+lahtopaikka: "Ratapihantie 13, Helsinki",
+loppulukema: "33215",
+loppuaika: "10:25",
+loppupaiva: "2019-06-08",
+loppupaikka: "Pajuniityntie 11, Helsinki"
+}
+]
+};
+ 	
+	function listaa() {
+			var teksti = ""
+
+			teksti += "Nimi: " + ajopaivakirja.laatija
+			teksti += "<br>" + ajopaivakirja.rekisterinro
+
+
+for (var i = 0; i < ajopaivakirja.ajot.length; i++) {
+	teksti += "<br><br>Lähtölukema: " + ajopaivakirja.ajot[i].lahtolukema
+			teksti += "<br>Lähtöpaikka: " + ajopaivakirja.ajot[i].lahtopaikka
+			teksti += "<br>Loppulukema: " + ajopaivakirja.ajot[i].loppulukema
+			teksti += "<br>Loppupaikka:" + ajopaivakirja.ajot[i].loppupaikka
+	
+}
+
+            
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+	}
+
+	function laskeKorvaus() {
+		var ajetutkilometrit = 0
+		for (let i = 0; i < ajopaivakirja.ajot.length; i++) {
+			ajetutkilometrit += (parseInt(ajopaivakirja.ajot[i].loppulukema) - parseInt(ajopaivakirja.ajot[i].lahtolukema))
+		}
+
+
+		document.getElementById("vastaus").innerHTML = "<p>Korvattava matka on " + ajetutkilometrit + " kilometriä." + "<br>Korvaus on " + ajetutkilometrit * 0.45  + " euroa.<p/>"
+	}
+
+	function etsi() {
+		var etsittava = document.getElementById("etsittava").value
+var etsintatulos = "Loppupäivät ja paikat:<br>"
+
+for (let i = 0; i < ajopaivakirja.ajot.length; i++) {
+	if (ajopaivakirja.ajot[i].lahtopaikka.includes(etsittava)) {
+		etsintatulos += ajopaivakirja.ajot[i].lahtopaiva + " " + ajopaivakirja.ajot[i].loppupaikka + "<br>"
+	}
+}
+
+
+		document.getElementById("vastaus").innerHTML = "<p>" + etsintatulos + "</p>"
+	}
+	</script>
+</body>
+</html>
