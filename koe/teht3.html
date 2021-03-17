@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kuntavaalit</title>
+</head>
+<body>
+	<h3>Kuntavaalit</h3>
+
+	<form>
+		<label>Vaalipiiri:</label> 
+		<input type="text" id="etsittava" size="10"> 
+		<input type="button" value="Listaa vaalipiirit" onclick="listaa()">
+        <input type="button" value="Näytä vaalipiirin tiedot" onclick="etsi()">
+		<input type="button" value="Koko maan äänestysprosentti" onclick="laskeMaa()">
+        <input type="button" value="Korken äänestysprosentti" onclick="laskeKorkein()">
+	</form>
+
+	<div id="vastaus"></div>
+
+    <script type="text/javascript">
+    
+    var data = [
+    {
+        vaalipiiri: 'Helsingin vaalipiiri',
+        aanioikeutettuja: 527982,
+        aania: {
+            hyvaksytyt: 449915,
+            hylatyt: 1527
+        }
+    },
+    {
+        vaalipiiri: 'Uudenmaan vaalipiiri',
+        aanioikeutettuja: 778028,
+        aania: {
+            hyvaksytyt: 618703,
+            hylatyt: 3491
+        }
+    },
+    {
+        vaalipiiri: 'Varsinais-Suomen vaalipiiri',
+        aanioikeutettuja: 386976,
+        aania: {
+            hyvaksytyt: 335608,
+            hylatyt: 2076
+        }
+    },
+    {
+        vaalipiiri: 'Satakunnan vaalipiiri',
+        aanioikeutettuja: 180882,
+        aania: {
+            hyvaksytyt: 164905,
+            hylatyt: 1107
+        }
+    },
+    {
+        vaalipiiri: 'Hämeen vaalipiiri',
+        aanioikeutettuja: 304025,
+        aania: {
+            hyvaksytyt: 256676,
+            hylatyt: 1788
+        }
+    },
+    {
+        vaalipiiri: 'Pirkanmaan vaalipiiri',
+        aanioikeutettuja: 409490,
+        aania: {
+            hyvaksytyt: 360377,
+            hylatyt: 1956
+        }
+    },
+    {
+        vaalipiiri: 'Kaakkois-Suomen vaalipiiri',
+        aanioikeutettuja: 378207,
+        aania: {
+            hyvaksytyt: 317965,
+            hylatyt: 2029
+        }
+    },
+    {
+        vaalipiiri: 'Savo-Karjalan vaalipiiri',
+        aanioikeutettuja: 336460,
+        aania: {
+            hyvaksytyt: 275056,
+            hylatyt: 1775
+        }
+    },
+    {
+        vaalipiiri: 'Vaasan vaalipiiri',
+        aanioikeutettuja: 348007,
+        aania: {
+            hyvaksytyt: 316951,
+            hylatyt: 1476
+        }
+    },
+    {
+        vaalipiiri: 'Keski-Suomen vaalipiiri',
+        aanioikeutettuja: 221521,
+        aania: {
+            hyvaksytyt: 188862,
+            hylatyt: 1187
+        }
+    },
+    {
+        vaalipiiri: 'Oulun vaalipiiri',
+        aanioikeutettuja: 373455,
+        aania: {
+            hyvaksytyt: 313208,
+            hylatyt: 1822
+        }
+    },
+    {
+        vaalipiiri: 'Lapin vaalipiiri',
+        aanioikeutettuja: 146525,
+        aania: {
+            hyvaksytyt: 131806,
+            hylatyt: 1112
+        }
+    }
+]
+ 	
+	function listaa() {
+			var teksti = ""
+
+for (var i = 0; i < data.length; i++) {
+	teksti += data[i].vaalipiiri + "<br>"
+	
+}
+
+            
+			document.getElementById("vastaus").innerHTML = "<p>" + teksti + "</p>";
+	}
+
+	function laskeMaa() {
+		var hyvaanet = 0
+        var hylaanet = 0
+        var aanioikeutetut = 0
+
+        for (let i = 0; i < data.length; i++) {
+            hyvaanet += data[i].aania.hyvaksytyt
+            hylaanet += data[i].aania.hylatyt
+            aanioikeutetut += data[i].aanioikeutettuja
+            
+        }
+
+var aanestysprosentti = ((hyvaanet+hylaanet)/aanioikeutetut*100)
+
+		document.getElementById("vastaus").innerHTML = "<p>Koko maan äänestysprosentti: " + aanestysprosentti.toFixed(2) + "%<p/>"
+	}
+
+    function laskeKorkein() {
+var aanestysprosentti = 0
+var placeholder = 0
+var vaalipiiri = ""
+
+        for (let i = 0; i < data.length; i++) {
+            placeholder = ((data[i].aania.hyvaksytyt + data[i].aania.hylatyt) / data[i].aanioikeutettuja * 100)
+            if (placeholder > aanestysprosentti) {
+                aanestysprosentti = placeholder
+                vaalipiiri = data[i].vaalipiiri
+            }
+        }
+
+		document.getElementById("vastaus").innerHTML = "<p>Korkein äänestysprosentti: " + vaalipiiri + " " + aanestysprosentti.toFixed(2) + "%<p/>"
+	}
+
+	function etsi() {
+		var etsittava = document.getElementById("etsittava").value
+var etsintatulos = ""
+
+for (let i = 0; i < data.length; i++) {
+	if (data[i].vaalipiiri.includes(etsittava)) {
+		etsintatulos += data[i].vaalipiiri + "<br> - äänioikeutettuja: " + data[i].aanioikeutettuja + "<br> - hyväksyttyjä ääniä: " + data[i].aania.hyvaksytyt + "<br> - hylättyjä ääniä: " + data[i].aania.hylatyt + "<br><br>"
+	}
+}
+
+
+		document.getElementById("vastaus").innerHTML = "<p>" + etsintatulos + "</p>"
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakkasen purevuus</title>
+</head>
+<body>
+    <h1>Pakkasen purevuus</h1>
+    <form>
+        <p>
+            <label>Lämpötila:</label>
+            <input type="text" id="lampotila" size="7">
+            <br><label>Tuulen nopeus km/h:</label> 
+            <input type="text" id="nopeus" size="7"> 
+            <br><input type="button" value="Näytä" onclick="naytaArvot()">
+        </p>
+    </form>
+    <div id="vastaus"></div>
+
+    <script>
+    function naytaArvot() {
+        var lampotila = document.getElementById("lampotila").value
+        var nopeus = document.getElementById("nopeus").value
+
+        var viimaindeksi = laskeViimaindeksi(lampotila, nopeus)
+        var paleltumariski = paleltumaRiski (viimaindeksi)
+
+
+    document.getElementById("vastaus").innerHTML = "<p>Viimaindeksi: " + viimaindeksi.toFixed(1) + "<br>" + paleltumariski + "</p>"
+    }
+
+    function laskeViimaindeksi(lampotila, nopeus) {
+        var viimaindeksi = (13.12 + 0.6215*lampotila + (0.3965*lampotila - 11.37) * nopeus**0.16)
+
+        return viimaindeksi
+
+        }
+
+    function paleltumaRiski(viimaindeksi) {
+    var paleltumariski
+
+if (viimaindeksi <= -28) {
+    paleltumariski = "Paleltumariski on suuri"
+} else if (viimaindeksi > -28 && viimaindeksi <= -10) {
+    paleltumariski = "Paleltumariski on kohtalainen"
+} else if (viimaindeksi > -10) {
+paleltumariski = "Paleltumariski on pieni" 
+}
+    return paleltumariski
+}
+
+    </script>
+</body>
+</html>

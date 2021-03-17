@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Auton esilämmitys</title>
+</head>
+
+<body class="vsc-initialized">
+	<form>
+		<label>Ulkolämpötila:</label> 
+        <input type="text" id="ulkolampotila" size="4">
+		<input type="button" value="Määritä lämmitysaika" onclick="maaritaAika()">
+       <br><label>Lämmitin</label> <input type="checkbox" id="polttoainelammitin">
+    </form>
+
+	<div id="vastaus"></div>
+
+	<script>
+
+		function maaritaAika() {
+            var ulkolampotila = document.getElementById("ulkolampotila").value
+            var ilmoitus
+    
+if (ulkolampotila >= -5 && ulkolampotila <= 0 && (document.getElementById("polttoainelammitin").checked == false)) {
+    ilmoitus = "Lämmitysaika 1 tunti"
+} else if (ulkolampotila >= -10 && ulkolampotila < -5 && (document.getElementById("polttoainelammitin").checked == false)) {
+    ilmoitus = "Lämmitysaika 2 tuntia"
+} else if (ulkolampotila < -10 && (document.getElementById("polttoainelammitin").checked == false)) {
+    ilmoitus = "Lämmitysaika 3 tuntia"
+} else if (ulkolampotila > 0) {
+    ilmoitus = "Lämmitystä ei tarvita."
+} else if (ulkolampotila >= -5 && (document.getElementById("polttoainelammitin").checked == true)) {
+ilmoitus = "Lämmitysaika 15 minuuttia"
+} else if (ulkolampotila >= -10 && (document.getElementById("polttoainelammitin").checked == true)) {
+ilmoitus = "Lämmitysaika 20 minuuttia"
+}else if (ulkolampotila < -10 && (document.getElementById("polttoainelammitin").checked == true)) {
+ilmoitus = "Lämmitysaika 30 minuuttia"
+} else if (Number.isNaN(ulkolampotila) == false) {
+    ilmoitus = "Virheellinen lämpötila-arvo"
+}
+
+			document.getElementById("vastaus").innerHTML = "<p>" + ilmoitus + "</p>"
+		}
+	</script>
+
+</body></html>
