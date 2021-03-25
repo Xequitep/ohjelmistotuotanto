@@ -49,6 +49,10 @@ main {
   .flex-container {
     flex-direction: column;
   }
+  header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media only screen and (min-width: 421px) {
   body {
@@ -61,13 +65,15 @@ main {
   }
 }
 @media only screen and (min-width: 1024px) {
-  :root {background-image:url(kuvat/tausta_100.jpg);
+  :root {
+    background-image: url(kuvat/tausta_100.jpg);
     background-repeat: no-repeat;
-    background-size: cover}
+    background-size: cover;
+  }
 
- body {width:80%;
-       margin:5px auto;
-       border: 2px black solid }
-
+  body {
+    width: 80%;
+    margin: 5px auto;
+    border: 2px black solid;
   }
 }
