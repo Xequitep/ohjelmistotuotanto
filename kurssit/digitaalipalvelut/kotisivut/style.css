@@ -17,9 +17,24 @@ header img {
   text-decoration: none;
 }
 
+.linkit {
+  list-style-type: none;
+}
+
+.kuva {
+  width: 50%;
+  height: 50%;
+}
+.teksti {
+  width: 50%;
+}
+
 h1 {
   color: rgb(255, 255, 255);
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+figcaption {
+  width: 50%;
 }
 
 /* ***************************************
@@ -52,10 +67,12 @@ h1 {
 @media only screen and (min-width: 421px) {
   .flex_container {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
   }
 
   .flex_item {
-    flex: 1;
+    flex: 0 0 50%;
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -76,15 +93,8 @@ h1 {
 *************************************** */
 
 @media only screen and (min-width: 1024px) {
-  :root {
-    background-image: url(kuvat/tausta_100.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   body {
     width: 80%;
     margin: 5px auto;
-    border: 2px black solid;
   }
 }

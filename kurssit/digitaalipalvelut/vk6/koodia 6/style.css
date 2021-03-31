@@ -17,6 +17,25 @@ header img {
   text-decoration: none;
 }
 
+#sivunavigointi ul {
+  padding-left: 10px;
+  width: 8em;
+  border-right: solid 1px blue;
+}
+
+#sivunavigointi a {
+  text-decoration: none;
+  color: red;
+}
+#sivunavigointi li {
+  list-style-type: none;
+}
+#kahvit {
+  margin-left: 10px;
+  column-count: 3;
+  column-rule: solid 1px rgb(204, 204, 204);
+}
+
 h1 {
   color: red;
   font-family: Tahoma, sans-serif;
@@ -38,6 +57,12 @@ h1 {
   flex: 1;
   padding-right: 5px;
   padding-left: 5px;
+}
+.flex_item_1 {
+  width: 9em;
+}
+.flex_item_2 {
+  flex: 1;
 }
 .leivonnaiset .flex_item {
   flex: 0 0 45%;
@@ -71,8 +96,14 @@ h1 {
     font-size: 1.3em;
     margin: 2px 0px;
   }
-}
 
+  #kahvit {
+    column-count: 1;
+  }
+  .flex_item_1 {
+    display: none;
+  }
+}
 /* ***************************************
  näyttö > 420px
 *************************************** */
@@ -103,6 +134,25 @@ h1 {
     width: 6.5em;
     border: solid 1px rgb(0, 0, 255);
   }
+}
+
+#sivunavigointi ul {
+  padding-left: 10px;
+  width: 8em;
+  border-right: solid 1px blue;
+}
+
+#sivunavigointi a {
+  text-decoration: none;
+  color: red;
+}
+
+#sivunavigointi li {
+  list-style-type: none;
+}
+
+#kahvit {
+  margin-left: 10px;
 }
 
 /* ***************************************
