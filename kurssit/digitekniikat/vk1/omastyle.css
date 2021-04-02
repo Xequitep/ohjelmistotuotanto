@@ -6,10 +6,12 @@
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
   color: rgb(218, 214, 21);
+  font-family: 'Roboto', sans-serif;
 }
 /* linkin väri */
 .navbar-custom .navbar-nav .nav-link {
   color: rgba(218, 214, 21);
+  font-family: 'Roboto', sans-serif;
 }
 /* aktiivisen & hover-linkin väri */
 .navbar-custom .nav-item.active .nav-link,
@@ -18,4 +20,34 @@
 }
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(218, 214, 21)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.nav-item .dropdown-menu a:hover {
+  color: darkgoldenrod !important;
+  background: darkgoldenrod !important;
+  cursor: pointer;
+}
+.carousel-caption {
+  color: white !important;
+  font-size: x-large;
+}
+.carousel-inner img {
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+#ravintola {
+  padding-top: 70px;
+}
+.ravintolakuva {
+  width: 100%;
+  border-top-left-radius: 30%;
+  border-bottom-right-radius: 30%;
 }

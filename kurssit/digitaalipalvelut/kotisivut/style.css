@@ -8,6 +8,10 @@ header,
 footer {
   text-align: center;
 }
+footer {
+  position: fixed;
+  bottom: 0px;
+}
 header img {
   width: 300px;
 }
