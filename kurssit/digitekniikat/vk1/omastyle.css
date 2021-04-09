@@ -1,3 +1,6 @@
+body {
+  position: relative;
+}
 /* taustan väri */
 .navbar-custom {
   background-color: rgba(88, 62, 18, 0.9);
@@ -26,6 +29,9 @@
   background: darkgoldenrod !important;
   cursor: pointer;
 }
+.nav-link.active {
+  color: white !important;
+}
 .carousel-caption {
   color: white !important;
   font-size: x-large;
@@ -50,4 +56,16 @@
   width: 100%;
   border-top-left-radius: 30%;
   border-bottom-right-radius: 30%;
+}
+.card-header,
+.nav-item {
+  background-color: rgba(88, 62, 18, 0.9) !important;
+}
+
+.btn-link,
+.nav-link {
+  color: rgb(218, 214, 21) !important;
+}
+.nav-link.active {
+  background-color: rgba(88, 62, 18, 1) !important;
 }
