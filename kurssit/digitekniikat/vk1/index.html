@@ -1,300 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tico Restaurant</title>
 
-    <!--bootsrapin CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tico Restaurant</title>
 
-    <!--Oma CSS-tiedosto-->
-    <link rel="stylesheet" href="omastyle.css" <!-- jQuery -- />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <!-- bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!--bootsrapin CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    <nav class="navbar navbar-expand-lg navbar-custom navbar-custom fixed-top">
-      <a class="navbar-brand" href="#"
-        ><img src="kuvat/logo.png" alt="Tico Restaurant" width="60px" /> Tico
-        Restaurant</a
-      >
-      <button
-        class="navbar-toggler custom-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        ariacontrols="navbarSupportedContent"
-        aria-expanded="false"
-        arialabel="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!--Oma CSS-tiedosto-->
+  <link rel="stylesheet" href="omastyle.css" <!-- jQuery -- />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                           Ylävalikko, linkit                            -->
-<!-- ----------------------------------------------------------------------- -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#ravintola">Ravintola</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              ariaexpanded="false"
-            >
-              Menu
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#ruoat">Ruoat</a>
-              <a class="dropdown-item" href="#accordion">Juomat</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#videot">Videot</a>
-          </li>
-                    <li class="nav-item">
-            <a class="nav-link" href="#otayhteytta">Ota yhteyttä</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet" />
+</head>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                                Karuselli                                -->
-<!-- ----------------------------------------------------------------------- -->
-    <div id="home" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ul class="carousel-indicators">
-        <li data-target="#home" data-slide-to="0" class="active"></li>
-        <li data-target="#home" data-slide-to="1"></li>
-        <li data-target="#home" data-slide-to="2"></li>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-custom fixed-top">
+    <a class="navbar-brand" href="#"><img src="kuvat/logo.png" alt="Tico Restaurant" width="60px" /> Tico
+      Restaurant</a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" ariacontrols="navbarSupportedContent" aria-expanded="false"
+      arialabel="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                           Ylävalikko, linkit                            -->
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ravintola">Ravintola</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" ariaexpanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#ruoat">Ruoat</a>
+            <a class="dropdown-item" href="#accordion">Juomat</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#videot">Videot</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#otayhteytta">Ota yhteyttä</a>
+        </li>
       </ul>
+    </div>
+  </nav>
 
-      <!-- The slideshow -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="kuvat/kahvi1.jpg" alt="Kahvi 01"> 
-          <div class="carousel-caption"><p>Kahvi maistuu</p>
-        </div>
-        </div>
-        <div class="carousel-item">
-          <img src="kuvat/kahvi2.jpg" alt="Kahvi 02">
-          <div class="carousel-caption"><p>Kahvi maistuu edelleen</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="kuvat/kahvi3.jpg" alt="Kahvi 03">
-          <div class="carousel-caption"><p>Kahvi maistuu aina</p>
-          </div>
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                Karuselli                                -->
+  <!-- ----------------------------------------------------------------------- -->
+  <div id="home" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#home" data-slide-to="0" class="active"></li>
+      <li data-target="#home" data-slide-to="1"></li>
+      <li data-target="#home" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="kuvat/kahvi1.jpg" alt="Kahvi 01">
+        <div class="carousel-caption">
+          <p>Kahvi maistuu</p>
         </div>
       </div>
-
-      <!-- Left and right controls  -->
-      <a class="carousel-control-prev" href="#home" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#home" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
+      <div class="carousel-item">
+        <img src="kuvat/kahvi2.jpg" alt="Kahvi 02">
+        <div class="carousel-caption">
+          <p>Kahvi maistuu edelleen</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="kuvat/kahvi3.jpg" alt="Kahvi 03">
+        <div class="carousel-caption">
+          <p>Kahvi maistuu aina</p>
+        </div>
+      </div>
     </div>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                              Ravintolainfo                              -->
-<!-- ----------------------------------------------------------------------- -->
+    <!-- Left and right controls  -->
+    <a class="carousel-control-prev" href="#home" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#home" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
 
-    <div class="container" id=ravintola>
-      <div class="row">
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Ravintolainfo                              -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <div class="container" id=ravintola>
+    <div class="row">
       <div class="col-md-4"><img src="kuvat/ravintola1.jpg" alt="Ravintolakuva" class="ravintolakuva"></div>
-      <div class="col-md-4"><h1>Tico Restaurant</h1><p>Tule nauttimaan hyvästä ruuasta ja laajasta juomavalikoimastamme tunnelmalliseen ympäristöön. Löydät meidät Pasilan aseman kupeesta, Ratapihantie 13.</p><br>Auki:<br>su - to 10:30 - 20:00<br>pe - la 10:30 - 22:00</div>
+      <div class="col-md-4">
+        <h1>Tico Restaurant</h1>
+        <p>Tule nauttimaan hyvästä ruuasta ja laajasta juomavalikoimastamme tunnelmalliseen ympäristöön. Löydät meidät
+          Pasilan aseman kupeesta, Ratapihantie 13.</p><br>Auki:<br>su - to 10:30 - 20:00<br>pe - la 10:30 - 22:00
+      </div>
       <div class="col-md-4"><img src="kuvat/poyta1.jpg" alt="Ravintolakuva" class="ravintolakuva"></div>
-      </div>
-      </div>
-
-<!-- ----------------------------------------------------------------------- -->
-<!--                                  Menu                                   -->
-<!-- ----------------------------------------------------------------------- -->
-
-<!-- ------------------------------ Ruoat ------------------------------- -->
-
-      <div class="card-deck" id="ruoat">
-        <div class="card">
-          <img src="kuvat/salaatti1.jpg" alt="Salaatti">
-          <div class="card-body text-center">
-            <p class="card-text"><h5>Salaatit</h5>Alkuruokana maistuu raikas salaatti. Voit tilata salaatin myös pääruuaksi, jolloin annos on suurempi.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="kuvat/keitto1.jpg" alt="Keitto">
-          <div class="card-body text-center">
-            <p class="card-text"><h5>Keitot</h5>Lämmin keitto on kevyt vaihtoehto. Valikoimastamme löytyy kasvi-, kala- ja lihakeittoja kauden mukaisista raaka-aineista.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="kuvat/annos13.jpg" alt="Pääruoka">
-          <div class="card-body text-center">
-            <p class="card-text"><h5>Pääruoka</h5>Pääruokana löytyy huolella valmistettuja kasvi-, kala- ja liharuoki. Ateriaa täydentää runsas valikoima lisukkeita.</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="kuvat/jade2.jpg" alt="Jälkiruoka">
-          <div class="card-body text-center">
-            <p class="card-text"><h5>Jälkiruoka</h5>Aterian päätteeksi maistuu makea jälkiruoka laajasta valikoimastamme. Voit valita jäätelön, leivonnaisen tai keittiön erikoisen. Lisätietoja erikoisuudesta saatte henkilökunnalta</p>
-          </div>
-        </div>
-      </div>
-<!-- ------------------------------- Juomat -------------------------------- -->
-<div id="accordion">
-
-<!-- ------------------------------- Kahvit -------------------------------- -->
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Kahvit
-        </button>
-      </h5>
     </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-        <div class="row">
-  <div class="col-sm-6"><img src="kuvat/kahvi4.jpg" alt="kahvi04" width="60%"></div>
-  <div class="col-sm-6"><p>Mainio LavAzzan tummapaahtoinen espresso lasiastiasta.</p></div>
-</div>
-        <div class="row">
-  <div class="col-sm-6"><img src="kuvat/kahvi5.jpg" alt="kahvi05" width="60%"></div>
-  <div class="col-sm-6"><p>Mainio LavAzzan tummapaahtoinen espresso keraamikupista.</p></div>
-</div>
+  </div>
+
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                  Menu                                   -->
+  <!-- ----------------------------------------------------------------------- -->
+
+  <!-- ------------------------------ Ruoat ------------------------------- -->
+
+  <div class="card-deck" id="ruoat">
+    <div class="card">
+      <img src="kuvat/salaatti1.jpg" alt="Salaatti">
+      <div class="card-body text-center">
+        <p class="card-text">
+        <h5>Salaatit</h5>Alkuruokana maistuu raikas salaatti. Voit tilata salaatin myös pääruuaksi, jolloin annos on
+        suurempi.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="kuvat/keitto1.jpg" alt="Keitto">
+      <div class="card-body text-center">
+        <p class="card-text">
+        <h5>Keitot</h5>Lämmin keitto on kevyt vaihtoehto. Valikoimastamme löytyy kasvi-, kala- ja lihakeittoja kauden
+        mukaisista raaka-aineista.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="kuvat/annos13.jpg" alt="Pääruoka">
+      <div class="card-body text-center">
+        <p class="card-text">
+        <h5>Pääruoka</h5>Pääruokana löytyy huolella valmistettuja kasvi-, kala- ja liharuoki. Ateriaa täydentää runsas
+        valikoima lisukkeita.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="kuvat/jade2.jpg" alt="Jälkiruoka">
+      <div class="card-body text-center">
+        <p class="card-text">
+        <h5>Jälkiruoka</h5>Aterian päätteeksi maistuu makea jälkiruoka laajasta valikoimastamme. Voit valita jäätelön,
+        leivonnaisen tai keittiön erikoisen. Lisätietoja erikoisuudesta saatte henkilökunnalta</p>
+      </div>
+    </div>
+  </div>
+  <!-- ------------------------------- Juomat -------------------------------- -->
+  <div id="accordion">
+
+    <!-- ------------------------------- Kahvit -------------------------------- -->
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne">
+            Kahvit
+          </button>
+        </h5>
+      </div>
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6"><img src="kuvat/kahvi4.jpg" alt="kahvi04" width="60%"></div>
+            <div class="col-sm-6">
+              <p>Mainio LavAzzan tummapaahtoinen espresso lasiastiasta.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><img src="kuvat/kahvi5.jpg" alt="kahvi05" width="60%"></div>
+            <div class="col-sm-6">
+              <p>Mainio LavAzzan tummapaahtoinen espresso keraamikupista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------------- Oluet -------------------------------- -->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            Oluet
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6"><img src="kuvat/juoma2.jpg" alt="Olut 01" width="60%"></div>
+            <div class="col-sm-6">
+              <p>Päivä käyntiin Heinekenilla. Alankomaiden klassikko-olut.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------- Viinit -------------------------------- -->
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            Viinit
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6"><img src="kuvat/juoma3.jpg" alt="Viini 01" width="60%"></div>
+            <div class="col-sm-6">
+              <p>Rieslingillä virkistystä kuumaan kesäpäivään.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-<!-- -------------------------------- Oluet -------------------------------- -->
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Oluet
-        </button>
-      </h5>
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                               Videotabit                                -->
+  <!-- ----------------------------------------------------------------------- -->
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="videot">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#video1">5 vegan meals</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#video2">Creamy vegan ice cream recipe </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#video3">Amazing vegan pizza</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active container" id="video1">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BhFIFZ_HKnE" allowfullscreen></iframe>
+      </div>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        <div class="row">
-  <div class="col-sm-6"><img src="kuvat/juoma2.jpg" alt="Olut 01" width="60%"></div>
-  <div class="col-sm-6"><p>Päivä käyntiin Heinekenilla. Alankomaiden klassikko-olut.</p></div>
-</div>
+    <div class="tab-pane container" id="video2">
+      <div class="tab-pane active container" id="video1">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QJc6HfeTivU"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane container" id="video3">
+      <div class="tab-pane active container" id="video1">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bpPs8uqGRQE"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
 
-<!-- ------------------------------- Viinit -------------------------------- -->
-
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Viinit
-        </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        <div class="row">
-  <div class="col-sm-6"><img src="kuvat/juoma3.jpg" alt="Viini 01" width="60%"></div>
-  <div class="col-sm-6"><p>Rieslingillä virkistystä kuumaan kesäpäivään.</p></div>
-</div>
-      </div>
-    </div>
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                              Yhteystiedot                               -->
+  <!-- ----------------------------------------------------------------------- -->
+  <div class="table-responsive" id="otayhteytta">
+    <h2>Yhteystiedot</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nimi</th>
+          <th>Tehtävä</th>
+          <th>Sähköposti</th>
+          <th>Puhelin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+          <td>040 411 4111</td>
+        </tr>
+        <tr>
+          <td>Mary</td>
+          <td>Moe</td>
+          <td>mary@example.com</td>
+          <td>040 411 4111</td>
+        </tr>
+        <tr>
+          <td>July</td>
+          <td>Dooley</td>
+          <td>july@example.com</td>
+          <td>040 411 4111</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                               Videotabit                                -->
-<!-- ----------------------------------------------------------------------- -->
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" id="videot">
-  <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#video1">5 vegan meals</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#video2">Creamy vegan ice cream recipe </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#video3">Amazing vegan pizza</a>
-  </li>
-</ul>
+  <!-- ----------------------------------------------------------------------- -->
+  <!--                                 Lomake                                  -->
+  <!-- ----------------------------------------------------------------------- -->
+  <div class="container">
+    <form onsubmit="return false">
+      Nimi: <input type="text" id="nimi" required>
+      <br>
+      Sähköposti: <input type="email" id="email" required>
+      <br>
+      Puhelin: <input type="tel" id="puhelin">
+      <br>
+      <label for="palaute">Palaute:</label>
+      <textarea id="palaute" name="palaute" rows="4" cols="50">
+      </textarea>
+      <br>
+      Mielipiteesi sivustosta: <br>
+      <input type="radio" id="hyvat" name="arvio" value="hyvät">
+      <label for="hyvat">Hyvät</label><br>
+      <input type="radio" id="ok" name="arvio" value="ok">
+      <label for="ok">Ok</label><br>
+      <input type="radio" id="huonot" name="arvio" value="huonot">
+      <label for="huonot">Huonot</label>
+      <br>Mielestäni sivuilla on: <br>
+      <input type="checkbox" id="fontti" name="hyvaa" value="Kaunis fontti">
+      <label for="fontti"> Kaunis fontti</label><br>
+      <input type="checkbox" id="tausta" name="hyvaa" value="Hieno tausta">
+      <label for="tausta"> Hieno tausta</label><br>
+      <input type="checkbox" id="usability" name="hyvaa" value="Mukava käytettävyys">
+      <label for="usability"> Mukava käytettävyys</label><br>
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active container" id="video1"><div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BhFIFZ_HKnE" allowfullscreen></iframe>
-</div></div>
-  <div class="tab-pane container" id="video2">  <div class="tab-pane active container" id="video1"><div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QJc6HfeTivU" allowfullscreen></iframe>
-</div></div></div>
-  <div class="tab-pane container" id="video3">  <div class="tab-pane active container" id="video1"><div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bpPs8uqGRQE" allowfullscreen></iframe>
-</div></div></div>
-</div>
+      <label for="cars">Valitse auto:</label>
+      <select name="cars" id="cars">
+        <option value="Volvo">Volvo</option>
+        <option value="Saab">Saab</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Audi">Audi</option>
+      </select> <br>
+      <input type="submit" value="Lähetä" onclick="varaus()">
+      <input type="reset" value="Tyhjennä">
+    </form>
+  </div>
 
-<!-- ----------------------------------------------------------------------- -->
-<!--                              Yhteystiedot                               -->
-<!-- ----------------------------------------------------------------------- -->
-<div class="table-responsive" id="otayhteytta">
-  <h2>Yhteystiedot</h2>            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nimi</th>
-        <th>Tehtävä</th>
-        <th>Sähköposti</th>
-        <th>Puhelin</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>040 411 4111</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>040 411 4111</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>040 411 4111</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  </body>
+  <div id="tiedot"></div>
+
+  <script>
+    function varaus() {
+      var nimitieto = document.getElementById("nimi").value
+      var email = document.getElementById("email").value
+      var puhelin = document.getElementById("puhelin").value
+      var palaute = document.getElementById("palaute").value
+      var arvio = "<br>Mielipiteesti sivusta: "
+      var radios = document.getElementsByName("arvio")
+      var valinnat = "<br>Sivuni on mielestäsi: "
+      var boksit = document.getElementsByName("hyvaa")
+      var auto = document.getElementById("cars").value
+
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          arvio += radios[i].value
+        }
+      }
+
+      for (var i = 0; i < boksit.length; i++) {
+        if (boksit[i].checked) {
+          valinnat += boksit[i].value + " "
+        }
+      }
+
+      document.getElementById("tiedot").innerHTML = "Hei, " + nimitieto + "<br>Tietosi:<br>E-mail: " + email + "<br>Puhelin: " + puhelin + "<br>Palautteesi: " + palaute + arvio + valinnat + "<br>Valitsemasi auto: " + auto
+    }
+  </script>
+
+</body>
+
 </html>
