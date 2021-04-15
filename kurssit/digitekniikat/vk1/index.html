@@ -323,7 +323,7 @@
     <form onsubmit="return false">
       Nimi: <input type="text" id="nimi" required>
       <br>
-      Sähköposti: <input type="email" id="email" required>
+      Sähköposti: <input type="email" id="email" placeholder="address@site.domain" required>
       <br>
       Puhelin: <input type="tel" id="puhelin">
       <br>
@@ -384,7 +384,11 @@
         }
       }
 
-      document.getElementById("tiedot").innerHTML = "Hei, " + nimitieto + "<br>Tietosi:<br>E-mail: " + email + "<br>Puhelin: " + puhelin + "<br>Palautteesi: " + palaute + arvio + valinnat + "<br>Valitsemasi auto: " + auto
+      var x = document.getElementById("cars").selectedIndex;
+      var y = document.getElementById("cars").options;
+      alert("Index: " + y[x].index + " is " + y[x].text);
+
+      document.getElementById("tiedot").innerHTML = "<h1>Hei, " + nimitieto + "</h1><br>Tietosi:<br>E-mail: " + email + "<br>Puhelin: " + puhelin + "<br>Palautteesi: " + palaute + arvio + valinnat + "<br>Valitsemasi auto: " + auto
     }
   </script>
 
