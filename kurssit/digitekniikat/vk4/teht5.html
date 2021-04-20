@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- ------------------------------- jQuery -------------------------------- -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- ------------------------------ Animointi ------------------------------ -->
+    <script>
+        $(document).ready(function () {
+            $("#animoi").click(function () {
+
+                $("div").animate({ height: '300px', opacity: '0.4' }, "slow");
+                $("div").animate({ width: '300px', opacity: '0.8' }, "slow");
+                $("div").animate({ height: '100px', opacity: '0.4' }, "slow");
+                $("div").animate({ width: '100px', opacity: '0.8' }, "slow");
+                $("div").delay(1200).animate({ left: '300px' }, "slow");
+                $("div").animate({ fontSize: '3em' }, "slow");
+                $("div").animate({ left: '600px' }, "slow")
+                $("div").animate({ fontSize: '1em' }, "slow");
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div style="width: 100px; height: 100px; background-color: red; position: absolute; left: 600px; font-size: 1em;">
+        Hei</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> <button id="animoi">Animoi</button>
+
+
+
+</body>
+
+</html>
