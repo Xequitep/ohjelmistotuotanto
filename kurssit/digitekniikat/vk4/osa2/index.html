@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>amazing world</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- ----------------------------------------------------------------------- -->
+	<!--                              Stylesheetit                               -->
+	<!-- ----------------------------------------------------------------------- -->
+
+	<!-- ------------------------------ Bootstrap ------------------------------ -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- GRT Youtube Plugin CSS -->
+	<link rel="stylesheet" href="css/grt-responsive-menu.css">
+
+	<!-- --------------------------- Jquery bxslider --------------------------- -->
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+
+	<!-- ------------------------------ Lightbox ------------------------------- -->
+	<link rel="stylesheet" href="css/lightbox.css">
+
+	<!-- -------------------------- Dokumentin style --------------------------- -->
+	<style>
+		#galleria img {
+			height: 150px;
+			border: 1.2px solid black;
+			filter: drop-shadow(6px 2px 0.8px black);
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="menu-container">
+			<div class="row no-margin">
+				<div class="col-sm-4 col-xs-6 no-padding">
+					<a href="#" class="grt-logo">
+						<h1>Logo</h1>
+					</a>
+				</div>
+				<div class="col-sm-8 col-xs-6 no-padding">
+					<nav>
+						<button class="grt-mobile-button">
+							<div class="line1"></div>
+							<div class="line2"></div>
+							<div class="line3"></div>
+						</button>
+						<ul class="grt-menu">
+							<li class="active"><a href="">Home</a></li>
+							<li><a href="">About</a></li>
+							<li><a href="">Contact</a></li>
+							<li><a href="">Blog</a></li>
+							<li class="grt-dropdown"><a>JavaScript</a>
+								<ul class="grt-dropdown-list">
+									<li><a href="">AngularJS</a></li>
+									<li><a href="">VueJS</a></li>
+									<li><a href="">ReactJS</a></li>
+								</ul>
+							</li>
+							<li><a href="">More Links</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<!-- ------------------------------- Slider -------------------------------- -->
+
+		<div class="slider">
+			<div><img src="images/Magnus.jpg" alt="Magnus"></div>
+			<div><img src="images/Hikaru.jpg" alt="Hikaru"></div>
+			<div><img src="images/Fabiano_Caruana_2013(2).jpg" alt="Fabiano"></div>
+			<div><img src="images/Maxime_Vachier-Lagrave,_2016-07.jpg" alt="MVL"></div>
+		</div>
+
+		<!-- ------------------------------ Galleria ------------------------------- -->
+		<div id="galleria">
+			<a href="images/Magnus.jpg" data-lightbox="shakkipelaajat"><img src="images/Magnus.jpg" alt="Magnus"></a>
+			<a href="images/Hikaru.jpg" data-lightbox="shakkipelaajat"><img src="images/Hikaru.jpg" alt="Hikaru"></a>
+			<a href="images/Fabiano_Caruana_2013(2).jpg" data-lightbox="shakkipelaajat"><img
+					src="images/Fabiano_Caruana_2013(2).jpg" alt="Fabiano"></a>
+			<a href="images/Maxime_Vachier-Lagrave,_2016-07.jpg" data-lightbox="shakkipelaajat"><img
+					src="images/Maxime_Vachier-Lagrave,_2016-07.jpg" alt="MVL"></a>
+		</div>
+
+		<!-- Jquery -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="js/grt-responsive-menu.js"></script>
+		<script src="js/jquery.bxslider.js"></script>
+		<script src="js/lightbox.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.slider').bxSlider();
+			});
+		</script>
+
+</body>
+
+</html>
