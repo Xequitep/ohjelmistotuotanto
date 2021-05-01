@@ -1,0 +1,27 @@
+[
+  {
+    "nimi": "Mikko Mallikas",
+    "tunnit": 8,
+    "paikka": "Helsinki"
+  },
+  {
+    "nimi": "Anna Malli",
+    "tunnit": 2,
+    "paikka": "Tampere"
+  },
+  {
+    "nimi": "Keijo 88",
+    "tunnit": 9,
+    "paikka": "Rauma"
+  },
+  {
+    "nimi": "88 Malli",
+    "tunnit": 25,
+    "paikka": "Pori"
+  },
+  {
+    "nimi": "Anna 55",
+    "tunnit": 2343,
+    "paikka": "Huittaa"
+  }
+]
