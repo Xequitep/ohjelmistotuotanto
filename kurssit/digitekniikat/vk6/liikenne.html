@@ -72,6 +72,29 @@
         });
     </script>
 
+    <script>
+        $.getJSON("https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?departing_trains=10&include_nonstopping=false", function (data) {
+            var items = []
+            var suomennos = ""
+            $.each(data, function (key, d) {
+                if (d.trainCategory == "Commuter") {
+                    suomennos = "Liikkuja"
+                } else if (d.trainCategory == "Long-distance") {
+                    suomennos = "Pitkä matka"
+                } else if (d.trainCategory == "Shunting") {
+                    suomennos = "Järjestelyveturi"
+                } else if (d.trainCategory == "On-track machines") {
+                    suomennos = "Raidelaitteet"
+                } else {
+                    suomennos = d.trainCategory
+                }
+                items.push("Junanumero: " + d.trainNumber + ", Kategoria: " + suomennos + ", Ensimmäinen lähtö: " + d.timeTableRows[0].scheduledTime.substr(11, 5) + "<br>")
+            })
+            $("#liikenne").append(items.join(""))
+        })
+    </script>
+
+    <div id="liikenne"></div>
 </body>
 
 </html>

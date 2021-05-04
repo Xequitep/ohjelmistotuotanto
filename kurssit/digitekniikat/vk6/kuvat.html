@@ -24,6 +24,30 @@
 
     <!-- ------------------------------ Lightbox ------------------------------- -->
     <link rel="stylesheet" href="css/lightbox.css">
+
+    <!-- -------------------------------- Kuvat -------------------------------- -->
+
+    <style>
+        img {
+            height: 150px;
+            float: left;
+            border: 1px solid black
+        }
+    </style>
+
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 Jquery                                  -->
+    <!-- ----------------------------------------------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="js/grt-responsive-menu.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').bxSlider();
+        });
+    </script>
 </head>
 
 <body>
@@ -60,18 +84,52 @@
         </div>
         </div>
     </header>
-
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/grt-responsive-menu.js"></script>
-    <script src="js/jquery.bxslider.js"></script>
-    <script src="js/lightbox.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.slider').bxSlider();
-        });
+        (function () {
+            var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+            $.getJSON(flickerAPI, {
+                tags: "Chess",
+                tagmode: "any",
+                format: "json"
+            })
+                .done(function (data) {
+                    $.each(data.items, function (i, item) {
+                        $("<img>").attr("src", item.media.m).appendTo("#images");
+                        if (i === 10) {
+                            return false;
+                        }
+                    });
+                });
+        })();
     </script>
-
+    <br><br><br>
+    <form>
+        <label>Hae:</label>
+        <input type="text" id="haku" size="12">
+        <input type="button" value="Hae" onclick="etsi()">
+    </form>
+    <script>
+        function etsi() {
+            // tähän edellisessä kohdassa tehty kuvien haku
+            var flickerAPI =
+                "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+            $.getJSON(flickerAPI, {
+                tags: document.getElementById("haku").value,
+                tagmode: "any",
+                format: "json"
+            })
+                .done(function (data) {
+                    $("#images").empty()
+                    $.each(data.items, function (i, item) {
+                        $("<img>").attr("src", item.media.m).appendTo("#images");
+                        if (i === 10) {
+                            return false;
+                        }
+                    });
+                });
+        }
+    </script>
+    <div id="images"></div>
 </body>
 
 </html>
