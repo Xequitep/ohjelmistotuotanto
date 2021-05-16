@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- ------------------------------- Jquery -------------------------------- -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB5BI4M6jhMXa4e-m8ZJ_myA-sbp2tKUCA",
+            authDomain: "digitekniikat-bebf0.firebaseapp.com",
+            databaseURL: "https://digitekniikat-bebf0-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "digitekniikat-bebf0",
+            storageBucket: "digitekniikat-bebf0.appspot.com",
+            messagingSenderId: "101773673029",
+            appId: "1:101773673029:web:0df7c934d6adc021df992c",
+            measurementId: "G-461SREHKDW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <h1 id="otsikko"> Kerro kuulumisesi </h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <label for="nimi">Nimi:</label>
+                    <textarea name="nimi" id="nimi" cols="20" rows="1"></textarea>
+                    <label for="viesti">Viesti:</label>
+                    <textarea name="viesti" id="viesti" cols="20" rows="5"></textarea>
+                    <button onclick="laheta()">Lähetä</button>
+                </form>
+            </div>
+            <div class="col-sm">
+                <h6>Viestit</h6>
+                <div id="viestiketju"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        var firebaseRef = firebase.database();
+        var fireHeading = document.getElementById("otsikko");
+
+        function laheta() {
+            // tekstin tallennus
+            var firebaseRef = firebase.database().ref();
+            var teksti = document.getElementById("viesti").value;
+            var lahettaja = document.getElementById("nimi").value;
+            var d = new Date();
+            var dd = d.getDate()
+            var mm = d.getMonth() + 1; //January == 0!
+            var yyyy = d.getFullYear();
+            var time = d.toLocaleTimeString();
+            if (dd < 10) { dd = '0' + dd } // alkunolla jos < 10
+            if (mm < 10) { mm = '0' + mm }
+            d = mm + '/' + dd + '/' + yyyy;
+            firebaseRef.child("viestisi").push().set({
+                nimi: lahettaja,
+                viesti: teksti,
+                aika: d
+
+            })
+            var nimi = snap.child("nimi").val();
+        }
+
+        var firebaseHeadingRef =
+            firebase.database().ref().child("heading");
+        firebaseHeadingRef.on('value', function (datasnapshot) {
+            fireHeading.innerText = datasnapshot.val();
+        });
+
+        var rootRef = firebase.database().ref().child('viestisi');
+        rootRef.on('child_added', snap => {
+            var viesti = snap.child("viesti").val();
+            var nimi = snap.child("nimi").val()
+            var aika = snap.child("aika").val()
+            $("#viestiketju").append("<p>" + aika + " " + nimi + ": " + viesti + "</p>");
+        });
+    </script>
+</body>
+
+</html>
